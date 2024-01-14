@@ -1,113 +1,85 @@
-import Image from 'next/image'
+import { PlayCircleOutline } from "@mui/icons-material";
+import Link from "next/link";
+import WeCareImage from "../public/wecareimage.png";
+import HappyForYou from "../public/happyforyou.png";
+import Welcome from "../public/welcome.png";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
+    <main className=" min-h-screen flex flex-col p-10 text-sm sm:text-base">
+      <div className=" flex-1 flex flex-col gap-10 sm:gap-14">
+        <div className=" flex flex-col md:flex-row gap-2">
+          <div className=" flex-1  flex flex-col gap-4 ">
+            <h1 className="  text-gray-600 font-bold">Welcome back!</h1>
+            <h1 className=" font-black text-lg ">
+              <span className=" text-red-600">It&apos;s okay</span>
+              <span className=" text-blue-700"> not to be okay</span>
+            </h1>
+            <h1 className=" font-bold text-base sm:text-lg">
+              Don&apos;t hide behind your pain, tell someone your pain
+            </h1>
+
+            <p>
+              Experience the future of the therapy with
+              <span className=" font-black"> Hygieiora</span> - a unique space
+              for individuals to connect with professional therapists and
+              volunteers in fostering a supportive community dedicated to
+              enhancing mental well-being.
+            </p>
+          </div>
+          <div className=" flex justify-center items-center rounded-lg  ">
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              alt="we care"
+              src={WeCareImage}
+              className=" object-contain aspect-auto  "
             />
-          </a>
+          </div>
+        </div>
+        <div className=" flex-1 flex flex-col gap-12">
+          <div className=" flex flex-col gap-2 sm:flex-row">
+            <div className=" flex-1 flex flex-col gap-2 justify-center">
+              <h1 className=" font-black text-xl sm:text-3xl">
+                The Rain gives us love for the sun
+              </h1>
+              <p>
+                Life can sometimes feel like an uphill battle. There is no
+                reason to climb this hill alone
+              </p>
+              <Link href={"/therapist"} className=" font-bold">
+                How to talk to the therapist
+                <span>
+                  <PlayCircleOutline />
+                </span>
+              </Link>
+            </div>
+
+            <div className="  rounded-lg relative  flex justify-center items-center">
+              <Image
+                alt="happy for you image"
+                src={HappyForYou}
+                className=" object-contain  aspect-auto h-1/2 w-1/2 sm:h-fit sm:w-fit rounded-lg bg-black bg-opacity-50"
+              />
+              <div className="absolute bottom-0 p-2 bg-black bg-opacity-60 text-center rounded-lg w-1/2 sm:w-full">
+                <h1 className="text-white">Happy for you</h1>
+              </div>
+            </div>
+          </div>
+          <div className=" relative flex-1 text-white ">
+            <Image alt="welcome" src={Welcome} className="" />
+            <div className="absolute bottom-0 p-2 bg-black bg-opacity-40 w-full  flex flex-col gap-2">
+              <div className=" flex gap-2 ">
+                <h1>2 Aug 2023</h1>
+                <h1 className=" font-bold">Admin</h1>
+              </div>
+              <h1 className="text-white font-bold">
+                Welcome to the commnunity
+              </h1>
+              <p>Your mental health, our priority</p>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
     </main>
-  )
+  );
 }
