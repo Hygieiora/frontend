@@ -26,6 +26,7 @@ export default function Footer() {
             <Link href={"/our-project"}>Our Project</Link>
             <Link href={"/blog"}>Our Blog </Link>
             <Link href={"/about-us"}>About Us </Link>
+            <Link href={"/auth/login"}>Login</Link>
           </div>
           <div className=" flex-1 flex flex-col gap-4">
             <div className=" flex gap-2 items-center">

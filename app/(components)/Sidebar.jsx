@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import SidebarLink from "./SidebarLink";
 import {
   AttachMoney,
@@ -35,6 +36,10 @@ export default function Sidebar({ sidebarOpen }) {
       <SidebarLink url={"/podcast"} text={"Podcast"} icon={<Mic />} />
       <h1 className=" opacity-70">Books</h1>
       <SidebarLink url={"/books"} text={"Books"} icon={<LibraryBooks />} />
+
+      <Link href={"/auth/login"} className=" mt-8">
+        Login
+      </Link>
     </div>
   );
 }

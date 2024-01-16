@@ -8,6 +8,8 @@ import { Button } from "@mui/material";
 import Link from "next/link";
 import { useState } from "react";
 import Sidebar from "./Sidebar";
+import clsx from "clsx";
+import { MontserratBold } from "../(fonts)/font";
 
 const Header = () => {
   const path = usePathname();
@@ -15,7 +17,14 @@ const Header = () => {
   return (
     <>
       <Sidebar sidebarOpen={sidebarOpen} />
-      <div className=" bg-white z-10 top-0 sticky w-full flex gap-8 justify-evenly items-center border-b-4 border-blue-600 sm:justify-center">
+      <div
+        className={clsx(
+          " bg-white z-10 top-0 sticky w-full",
+          " flex gap-8 justify-evenly items-center",
+          " border-b-4 border-blue-600 sm:justify-center",
+          `${MontserratBold.className}`
+        )}
+      >
         <div className=" flex flex-row justify-center items-center">
           <div>
             <Image
@@ -56,6 +65,14 @@ const Header = () => {
             className={`${path === "/contact" && "border-b-4 border-blue-600"}`}
           >
             Contact Us
+          </Link>{" "}
+          <Link
+            href={"/auth/login"}
+            className={`${
+              path === "/auth/login" && "border-b-4 border-blue-600"
+            }`}
+          >
+            Login{" "}
           </Link>
         </div>
 
