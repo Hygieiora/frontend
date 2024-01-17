@@ -20,24 +20,25 @@ const Header = () => {
       <div
         className={clsx(
           " bg-white z-10 top-0 sticky w-full",
-          " flex gap-8 justify-evenly items-center",
-          " border-b-4 border-blue-600 sm:justify-center",
+          " flex gap-8 justify-between items-center",
+          " border-b-4 border-blue-600 p-2 ",
           `${MontserratBold.className}`
         )}
       >
-        <div className=" flex flex-row justify-center items-center">
-          <div>
+        <div className=" flex flex-col justify-center items-center">
+          <div className=" flex  justify-center items-center gap-2">
             <Image
               src={logo}
               alt="logo"
               title="logo"
               className=" h-20 w-20 aspect-auto"
             />
+            <h1 className=" text-blue-600 text-base sm:text-xl">HYGIEIORA</h1>
           </div>
-          <div className=" flex flex-col justify-center items-center gap-2">
-            <h1 className=" text-blue-600 text-base sm:text-2xl">HYGIEIORA</h1>
+
+          {/* <div>
             <h1 className="text-sm sm:text-base">Conversations that heal</h1>
-          </div>
+          </div> */}
         </div>
         <div className="  hidden sm:gap-2 sm:flex sm:flex-row sm:justify-center sm:items-center">
           <Link
@@ -62,17 +63,27 @@ const Header = () => {
           </Link>
           <Link
             href={"/contact"}
-            className={`${path === "/contact" && "border-b-4 border-blue-600"}`}
+            className={`text-center ${
+              path === "/contact" && "border-b-4 border-blue-600 "
+            }`}
           >
             Contact Us
-          </Link>{" "}
+          </Link>
+          <Link
+            href={"/therapists"}
+            className={`${
+              path === "/therapists" && "border-b-4 border-blue-600"
+            }`}
+          >
+            Therapists
+          </Link>
           <Link
             href={"/auth/login"}
             className={`${
               path === "/auth/login" && "border-b-4 border-blue-600"
             }`}
           >
-            Login{" "}
+            Login
           </Link>
         </div>
 

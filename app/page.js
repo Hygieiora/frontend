@@ -67,7 +67,7 @@ export default function Home() {
                 Life can sometimes feel like an uphill battle. There is no
                 reason to climb this hill alone
               </p>
-              <Link href={"/therapist"} className=" font-bold">
+              <Link href={"/therapists"} className=" font-bold">
                 Talk to a therapist
                 <span>
                   <PlayCircleOutline />
