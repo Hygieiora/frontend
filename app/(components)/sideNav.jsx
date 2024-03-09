@@ -24,7 +24,7 @@ const SideNav = () => {
   ];
 
   return (
-    <div className="fixed top-0 border-blue-600 border-r-4 sm:relative bg-blue-600">
+    <div className="fixed top-0 border-blue-600 border-r-4 sm:relative bg-blue-600 hidden md:block">
       <div
         className={`${
           open ? "w-60" : "w-20"

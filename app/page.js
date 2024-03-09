@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import ReactModal from "react-modal";
 import LoginPage from "./auth/login/page";
 import SideNav from "./(components)/sideNav";
+import MobileNavBar from "./(components)/mobileNavBar";
 export default function Home() {
   const [showLoginModal, setShowLoginModal] = useState(false);
 
@@ -28,6 +29,7 @@ export default function Home() {
   return (
     <main className=" min-h-screen flex text-sm sm:text-base">
       <SideNav />
+      <MobileNavBar />
       <div className=" flex-1 m-10 flex flex-col gap-10 sm:gap-14">
         <div className=" flex flex-col md:flex-row gap-2">
           <div className=" flex-1  flex flex-col gap-4 ">
@@ -102,7 +104,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <ReactModal
+      {/* <ReactModal
         isOpen={showLoginModal}
         onRequestClose={handleLoginModalClose}
         contentLabel="Login "
@@ -114,7 +116,7 @@ export default function Home() {
           <Close />
         </span>
         <LoginPage />
-      </ReactModal>
+      </ReactModal> */}
     </main>
   );
 }
