@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import axios from 'axios';
 import Link from "next/link";
 import Image from "next/image";
 
@@ -8,23 +7,28 @@ const SideNav = () => {
   const [activeMenu, setActiveMenu] = useState(0); // State to track active menu index
 
   const Menus = [
-    { title: "Dashboard", src: "Chat", link: "/" },
-    { title: "Blog Post", src: "Search", link: "/Pages/Blog_Post" },
+    { title: "Dashboard", src: "Dashboard", link: "" },
+    { title: "Blog Post", src: "Blog Post", link: "/Pages/Blog_Post" },
     {
-      title: "Hycres_Hub",
-      src: "Folder",
+      title: "Hycres Hub",
+      src: "Hycres Hub",
       gap: true,
-      link: "/Pages/Hycres Hub",
+      link: "/Pages/Hycres_Hub",
     },
-    { title: "Notifications", src: "Calendar", link: "/Pages/Notifications" },
-    { title: "Profile", src: "User", gap: true, link: "/Pages/Profile" },
+    {
+      title: "Notifications",
+      src: "Notifications",
+      link: "/Pages/Notifications",
+    },
+    { title: "Profile", src: "Profile", gap: true, link: "/Pages/Profile" },
   ];
+
   return (
-    <div className="hidden border-blue-600 border-r-4 sm:flex relative bg-white ">
+    <div className="fixed top-0 border-blue-600 border-r-4 sm:relative bg-blue-600">
       <div
         className={`${
           open ? "w-60" : "w-20"
-        } bg-white h-screen p-5 pt-8  duration-300`}
+        } bg-blue-600 h-screen p-5 pt-8 duration-300`}
       >
         <Image
           width={28}
@@ -48,7 +52,7 @@ const SideNav = () => {
               alt={"logo"}
             />
             <h1
-              className={`text-black origin-left font-bold text-xl duration-200 ${
+              className={`text-white origin-left font-bold text-xl duration-200 ${
                 !open && "scale-0"
               }`}
             >
@@ -60,9 +64,9 @@ const SideNav = () => {
           {Menus.map((Menu, index) => (
             <a href={Menu.link} key={index}>
               <span
-                className={`flex rounded-md p-2 cursor-pointer hover:bg-blue-600 hover:text-white text-black text-md font-semibold items-center gap-x-4 ${
+                className={`flex rounded-md p-2 cursor-pointer hover:bg-gray-900 text-white text-md font-semibold items-center gap-x-4 ${
                   Menu.gap ? "mt-9" : "mt-2"
-                } ${activeMenu === index ? "bg-darkGray text-black" : ""}`}
+                } ${activeMenu === index ? "bg-darkGray text-white" : ""}`}
               >
                 <Image
                   width={28}
