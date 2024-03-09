@@ -6,8 +6,8 @@
 // import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 
-import { MontserratBold, SpaceBold } from "@/app/(fonts)/font";
-import { Email, Google, Lock } from "@mui/icons-material";
+// import { MontserratBold, SpaceBold } from "@/app/(fonts)/font";
+// import { Email, Google, Lock } from "@mui/icons-material";
 import clsx from "clsx";
 
 export default function LoginPage() {
@@ -20,18 +20,21 @@ export default function LoginPage() {
       <div className=" w-full sm:w-1/2">
         <h1
           className={clsx(
-            " text-blue-600 text-lg sm:text-3xl",
-            `${MontserratBold.className}`
+            " text-blue-600 text-lg sm:text-3xl"
+            // `${MontserratBold.className}`
           )}
         >
           Welcome back!
         </h1>
         <h1
-          className={clsx("text-lg sm:text-3xl", `${MontserratBold.className}`)}
+          className={clsx(
+            "text-lg sm:text-3xl"
+            // `${MontserratBold.className}`
+          )}
         >
           Log In
         </h1>
-        <form className={clsx("flex flex-col gap-4")}>
+        {/* <form className={clsx("flex flex-col gap-4")}>
           <div className={clsx("flex flex-col gap-2 ")}>
             <label>Email Address</label>
             <div
@@ -96,8 +99,8 @@ export default function LoginPage() {
           </div>
           <button className=" self-center mt-4 flex justify-center items-center gap-2 flex-1">
             <Google /> <h1>Continue with Google</h1>
-          </button>
-        </form>
+          </button> */}
+        {/* </form> */}
       </div>
     </main>
   );

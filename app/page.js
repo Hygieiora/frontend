@@ -9,7 +9,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import ReactModal from "react-modal";
 import LoginPage from "./auth/login/page";
-
+import SideNav from "./(components)/sideNav";
 export default function Home() {
   const [showLoginModal, setShowLoginModal] = useState(false);
 
@@ -26,8 +26,9 @@ export default function Home() {
     setShowLoginModal(false);
   };
   return (
-    <main className=" min-h-screen flex flex-col p-10 text-sm sm:text-base">
-      <div className=" flex-1 flex flex-col gap-10 sm:gap-14">
+    <main className=" min-h-screen flex text-sm sm:text-base">
+      <SideNav />
+      <div className=" flex-1 m-10 flex flex-col gap-10 sm:gap-14">
         <div className=" flex flex-col md:flex-row gap-2">
           <div className=" flex-1  flex flex-col gap-4 ">
             <h1 className="  text-gray-600 font-bold text-lg sm:text-2xl">
