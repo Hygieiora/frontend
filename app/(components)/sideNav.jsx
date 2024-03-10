@@ -40,7 +40,7 @@ const SideNav = () => {
           onClick={() => setOpen(!open)}
           alt={"control"}
         />
-        <Link href="/homepage">
+        {/* <Link href="/homepage">
           <div className="flex gap-x-4 items-center">
             <Image
               width={28}
@@ -59,7 +59,7 @@ const SideNav = () => {
               Hygieiora
             </h1>
           </div>
-        </Link>
+        </Link> */}
         <ul className="pt-6">
           {Menus.map((Menu, index) => (
             <a href={Menu.link} key={index}>

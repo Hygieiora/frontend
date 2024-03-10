@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <main className=" min-h-screen flex text-sm sm:text-base">
       <SideNav />
-      <MobileNavBar />
+      {/* <MobileNavBar /> */}
       <div className=" flex-1 m-10 flex flex-col gap-10 sm:gap-14">
         <div className=" flex flex-col md:flex-row gap-2">
           <div className=" flex-1  flex flex-col gap-4 ">
