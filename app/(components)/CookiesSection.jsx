@@ -1,56 +1,54 @@
-"use client";
 // Import necessary dependencies
 import { useState } from "react";
-import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  Button,
-} from "@material-ui/core";
+import { FaTimes } from "react-icons/fa"; // Import the icons you need
 
-export default function CookiePolicyModal() {
-  const [open, setOpen] = useState(false); // State to control the open/close of the modal
+export default function CookiesSection() {
+  const [isOpen, setIsOpen] = useState(false); // State to control the open/close of the modal
 
   // Function to open the modal
   const handleOpen = () => {
-    setOpen(true);
+    setIsOpen(true);
   };
 
   // Function to close the modal
   const handleClose = () => {
-    setOpen(false);
+    setIsOpen(false);
   };
 
   return (
     <div>
-      <Button onClick={handleOpen}>Show Cookie Policy</Button>
-
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        TransitionProps={{ appear: true, timeout: 1000 }} // Add transition animation
-        style={{ transform: "translateY(100%)" }} // Start from the bottom of the screen
+      <button
+        onClick={handleOpen}
+        className="bg-blue-500 text-white rounded px-4 py-2"
       >
-        <DialogTitle>Your Privacy Choices</DialogTitle>
-        <DialogContent>
-          This website uses cookies and other tracking technologies to enhance
-          user experience and to analyze performance and traffic on our
-          website...
-          {/* Add the rest of your text here */}
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color="primary">
-            Accept Cookies
-          </Button>
-          <Button onClick={handleClose} color="primary">
-            Reject All
-          </Button>
-          <Button onClick={handleClose} color="primary">
-            Do Not Sell or Share My Personal Information
-          </Button>
-        </DialogActions>
-      </Dialog>
+        Show Cookie Policy
+      </button>
+
+      {isOpen && (
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg overflow-auto p-8 m-4 max-w-xl">
+            <button onClick={handleClose} className="float-right">
+              <FaTimes />
+            </button>
+            <h2 className="text-2xl mb-4">Your Privacy Choices</h2>
+            <p>
+              This website uses cookies and other tracking technologies to
+              enhance user experience...
+            </p>
+            {/* Add the rest of your text here */}
+            <button
+              onClick={handleClose}
+              className="mt-4 bg-blue-500 text-white rounded px-4 py-2"
+            >
+              Accept Cookies
+            </button>
+          </div>
+          <div
+            onClick={handleClose}
+            className="fixed top-0 left-0 w-full h-full bg-black opacity-50"
+          ></div>
+        </div>
+      )}
     </div>
   );
 }

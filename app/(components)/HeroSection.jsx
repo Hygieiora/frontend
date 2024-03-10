@@ -1,20 +1,32 @@
 "use client";
 // Import necessary dependencies
 import { useState } from "react";
-import Carousel from "react-material-ui-carousel"; // You might need to install this package
-// import { Button } from "@material-ui/core";
+import { FaPlay } from "react-icons/fa"; // Import the icons you need
 
 // Sample data for the carousel items, replace with your actual image paths and texts
 const items = [
   {
-    imgPath: "/path/to/your/image1.jpg",
+    imgPath: "01.jpg",
+    title: "Ready To Get Started?",
+    description: "Choose your path to a sound and healthy life",
+  },
+  {
+    imgPath: "02.png",
+    title: "Ready To Get Started?",
+    description: "Choose your path to a sound and healthy life",
+  },
+  {
+    imgPath: "03.png",
+    title: "Ready To Get Started?",
+    description: "Choose your path to a sound and healthy life",
+  },
+  {
+    imgPath: "04.png",
     title: "Ready To Get Started?",
     description: "Choose your path to a sound and healthy life",
   },
   // ... Add other images and texts here
 ];
-
-MAJOR.MINOR.PATCH
 
 export default function HeroSection() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -22,12 +34,7 @@ export default function HeroSection() {
   return (
     <div className="relative">
       {/* Carousel component */}
-      <Carousel
-        autoPlay={false}
-        animation="slide"
-        index={activeIndex}
-        onChange={(index, active) => setActiveIndex(index)}
-      >
+      <div className="flex">
         {items.map((item, index) => (
           <img
             src={item.imgPath}
@@ -36,20 +43,21 @@ export default function HeroSection() {
             key={index}
           />
         ))}
-      </Carousel>
+      </div>
 
       {/* Overlay content */}
       <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col justify-center items-center text-white">
         <h2 className="text-4xl mb-4">{items[activeIndex].title}</h2>
         <p className="mb-8">{items[activeIndex].description}</p>
 
-        {/* Buttons */}
-        <Button variant="contained" color="primary">
-          Log In
-        </Button>
-        <Button variant="outlined" color="primary" className="ml-4">
-          Register
-        </Button>
+        <div className="flex items-center mb-4">
+          <button className="bg-blue-500 text-white rounded px-4 py-2 mr-2">
+            Log In
+          </button>
+          <button className="border border-blue-500 text-blue-500 rounded px-4 py-2">
+            Register
+          </button>
+        </div>
       </div>
 
       {/* Top left button */}
@@ -57,9 +65,9 @@ export default function HeroSection() {
         onClick={() =>
           setActiveIndex((prev) => (prev - 1 + items.length) % items.length)
         }
-        className=""
+        className="absolute top-0 left-0 m-4 bg-blue-500 text-white rounded px-4 py-2 flex items-center"
       >
-        Start Journey
+        <FaPlay className="mr-2" /> Start Journey
       </button>
     </div>
   );

@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
       <body className={InriaRegular.className}>
         <Header />
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

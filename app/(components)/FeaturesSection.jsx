@@ -1,11 +1,10 @@
 // Import necessary dependencies
-import { Grid, Typography, Button } from "@material-ui/core";
-import LockIcon from "@material-ui/icons/Lock"; // Import other icons as needed
+import { FaLock } from "react-icons/fa"; // Import the icons you need
 
 // Sample data for the features/services, replace with your actual data
 const features = [
   {
-    icon: <LockIcon />, // Replace with your actual icons
+    icon: <FaLock className="text-blue-500" />, // Replace with your actual icons
     title: "Crisis intervention",
     description:
       "Discover our crisis research such as hotlines, emergency contacts, and tips for recognizing crisis and reaching out safely.",
@@ -16,26 +15,24 @@ const features = [
 export default function FeaturesSection() {
   return (
     <div className="p-8 bg-blue-900 text-white">
-      <Typography variant="h4" className="mb-6">
+      <h2 className="text-2xl mb-6">
         Welcome to a space of support and healing
-      </Typography>
+      </h2>
 
-      <Grid container spacing={4}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {features.map((feature, index) => (
-          <Grid item xs={12} sm={6} md={3} key={index}>
+          <div key={index}>
             <div className="flex items-center mb-2">
               {feature.icon}
-              <Typography variant="h6" className="ml-2">
-                {feature.title}
-              </Typography>
+              <h3 className="text-xl ml-2">{feature.title}</h3>
             </div>
-            <Typography className="mb-4">{feature.description}</Typography>
-            <Button variant="outlined" color="inherit">
+            <p className="mb-4">{feature.description}</p>
+            <button className="border border-white text-white rounded px-4 py-2">
               View more
-            </Button>
-          </Grid>
+            </button>
+          </div>
         ))}
-      </Grid>
+      </div>
     </div>
   );
 }
