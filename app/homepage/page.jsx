@@ -8,8 +8,8 @@ export default function HomePage() {
   return (
     <>
     {/* <Header /> */}
-    <HeroSection />
-      {/* <FeaturesSection /> */}
+    {/* <HeroSection /> */}
+      <FeaturesSection />
       {/* <TherapySection /> */}
       {/* <LastSection /> */}
       {/* <Footer /> */}
