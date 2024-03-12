@@ -3,14 +3,15 @@ import SideNav from "../../(components)/sideNav";
 import Link from "next/link";
 import Image from "next/image";
 import MobileNavBar from "../../(components)/mobileNavBar";
+import Footer from "../../(components)/Footer";
 const Profile = () => {
   return (
     <>
       <main className=" min-h-screen flex text-sm sm:text-base">
         <SideNav />
-        <MobileNavBar />
-        <section className="w-full h-[60vh] bg-white border m-10 border-blue-600 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-          <div className="flex flex-col items-center pb-10">
+        {/* <MobileNavBar /> */}
+        <section className="w-full bg-white m-10 border-blue-600 ">
+          <div className="flex flex-col border rounded border-blue-600 items-center pb-10">
             <div className="flex items-center font-bold text-3xl justify-center text-center text-white w-full p-12 bg-blue-600">
               STUDENT PROFILE
             </div>
@@ -140,14 +141,14 @@ const Profile = () => {
               </div>
             </div>{" "}
             {/* buttons */}
-            <div className="flex items-center justify-center gap-4 p-4">
+            <div className="flex items-center  justify-center gap-4 p-4">
               <Link href="/">
-                <button className="rounded text-red-600 border border-red-600 px-2 sm:px-10 py-3 sm:py-3 text-md sm:text-lg cursor-pointer hover:opacity-80">
+                <button className="rounded text-red-600 border border-red-600 px-2 sm:px-8 py-2 sm:py-2 text-md sm:text-sm cursor-pointer hover:opacity-80">
                   Back to Main Menu{" "}
                 </button>
               </Link>
-              <Link href="s">
-                <button className="rounded bg-blue-600 text-white border border-blue-600 px-2 sm:px-10 py-3 sm:py-3 text-md sm:text-lg cursor-pointer hover:opacity-80">
+              <Link href="">
+                <button className="rounded bg-blue-600 text-white border border-blue-600 px-2 sm:px-8 py-2 sm:py-2 text-md sm:text-sm cursor-pointer hover:opacity-80">
                   Update
                 </button>
               </Link>
@@ -156,6 +157,7 @@ const Profile = () => {
           <div className="p-10"></div>
         </section>
       </main>
+      <Footer />
     </>
   );
 };

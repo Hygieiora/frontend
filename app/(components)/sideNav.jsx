@@ -7,7 +7,7 @@ const SideNav = () => {
   const [activeMenu, setActiveMenu] = useState(0); // State to track active menu index
 
   const Menus = [
-    { title: "Dashboard", src: "Dashboard", link: "" },
+    { title: "Dashboard", src: "Dashboard", link: "/" },
     { title: "Blog Post", src: "Blog Post", link: "/Pages/Blog_Post" },
     {
       title: "Hycres Hub",
@@ -24,7 +24,7 @@ const SideNav = () => {
   ];
 
   return (
-    <div className="fixed top-0 border-blue-600 border-r-4 sm:relative bg-blue-600 hidden md:block">
+    <div className="relative border-blue-600 border-r-4 bg-blue-600 hidden md:block">
       <div
         className={`${
           open ? "w-60" : "w-20"
@@ -60,7 +60,8 @@ const SideNav = () => {
             </h1>
           </div>
         </Link> */}
-        <ul className="pt-6">
+
+        <ul className="">
           {Menus.map((Menu, index) => (
             <a href={Menu.link} key={index}>
               <span
