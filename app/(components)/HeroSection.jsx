@@ -32,6 +32,7 @@ export default function HeroSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
+    // carousel component from tailwind css should be rendered here
     <div className="relative">
       {/* Carousel component */}
       <div className="flex">
