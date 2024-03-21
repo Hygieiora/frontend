@@ -10,21 +10,21 @@ export default function LastSection() {
         <p className="text-sm mb-8">Your health your call </p>
         <section className="flex justify-between gap-5 mx-auto flex-row">
           <div className="flex flex-col  items-center text-center">
-            <Image href={"/no1.png"} width={60} height={60} alt={"no1"}></Image>
+            <Image src={"/no1.png"} width={60} height={60} alt={"no1"}></Image>
             <h2 className="font-bold">Student Id or email</h2>
             <p className="text-blue-600 text-sm">
               Sign up or login with your details to continue therapy{" "}
             </p>
           </div>
           <div className="flex flex-col items-center text-center">
-            <Image href={"/no2.png"} width={60} height={60} alt={"no2"}></Image>
+            <Image src={"/no2.png"} width={60} height={60} alt={"no2"}></Image>
             <h2 className="font-bold">Talk to therapists</h2>
             <p className="text-blue-600 text-sm">
               Tell as your issues, we will find you a therapist to talk to
             </p>
           </div>
           <div className="flex flex-col  items-center text-center">
-            <Image href={"/no3.png"} width={60} height={60} alt={"no3"}></Image>
+            <Image src={"/no3.png"} width={60} height={60} alt={"no3"}></Image>
             <h2 className="font-bold">Stay connected with Hygieiora</h2>
             <p className="text-blue-600 text-sm">
               Stay connected to therapist and volunteers{" "}

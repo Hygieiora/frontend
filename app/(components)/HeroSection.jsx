@@ -1,9 +1,6 @@
-"use client";
-// Import necessary dependencies
-import { useState } from "react";
-import { FaPlay } from "react-icons/fa"; // Import the icons you need
+import { useState, useEffect } from "react";
+import { FaPlay } from "react-icons/fa";
 
-// Sample data for the carousel items, replace with your actual image paths and texts
 const items = [
   {
     imgPath: "01.jpg",
@@ -11,64 +8,100 @@ const items = [
     description: "Choose your path to a sound and healthy life",
   },
   {
-    imgPath: "02.png",
+    imgPath: "02.jpg",
     title: "Ready To Get Started?",
     description: "Choose your path to a sound and healthy life",
   },
-  {
-    imgPath: "03.png",
-    title: "Ready To Get Started?",
-    description: "Choose your path to a sound and healthy life",
-  },
-  {
-    imgPath: "04.png",
-    title: "Ready To Get Started?",
-    description: "Choose your path to a sound and healthy life",
-  },
-  // ... Add other images and texts here
 ];
-
 export default function HeroSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % items.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []); // Run once on component mount
+
+  const goToPrevSlide = () => {
+    setActiveIndex((prevIndex) =>
+      prevIndex === 0 ? items.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNextSlide = () => {
+    setActiveIndex((prevIndex) => (prevIndex + 1) % items.length);
+  };
+
   return (
-    // carousel component from tailwind css should be rendered here
-    <div className="relative">
-      {/* Carousel component */}
-      <div className="flex">
+    <div
+      id="carouselExampleControls"
+      className="relative"
+      data-twe-carousel-init
+      data-twe-ride="carousel"
+    >
+      {/* Carousel items */}
+      <div className="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
         {items.map((item, index) => (
-          <img
-            src={item.imgPath}
-            alt=""
-            className="w-full h-auto"
+          <div
             key={index}
-          />
+            className={`relative float-left ${
+              index === activeIndex ? "" : "hidden"
+            } w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none`}
+            data-twe-carousel-item
+            data-twe-carousel-active
+          >
+            <img src={item.imgPath} alt={item.alt} className="block w-full" />
+            <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col justify-center items-center text-white">
+              <h2 className="text-4xl mb-4">{item.title}</h2>
+              <p className="mb-8">{item.description}</p>
+              <div className="flex items-center mb-4">
+                <button className="bg-blue-500 text-white rounded px-4 py-2 mr-2">
+                  Log In
+                </button>
+                <button
+                  className="border border-blue-500 text-blue-500 rounded px-4 py-2"
+                  onClick={() => setShowSignIn(true)}
+                >
+                  Register
+                </button>
+              </div>
+            </div>
+          </div>
         ))}
       </div>
 
-      {/* Overlay content */}
-      <div className=" top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col justify-center items-center text-white">
-        <h2 className="text-4xl mb-4">{items[activeIndex].title}</h2>
-        <p className="mb-8">{items[activeIndex].description}</p>
-
-        <div className="flex items-center mb-4">
-          <button className="bg-blue-500 text-white rounded px-4 py-2 mr-2">
-            Log In
-          </button>
-          <button className="border border-blue-500 text-blue-500 rounded px-4 py-2">
-            Register
-          </button>
-        </div>
-      </div>
-
-      {/* Top left button */}
+      {/* Carousel controls - prev item */}
       <button
-        onClick={() =>
-          setActiveIndex((prev) => (prev - 1 + items.length) % items.length)
-        }
-        className="absolute top-0 left-0 m-4 bg-blue-500 text-white rounded px-4 py-2 flex items-center"
+        className="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+        type="button"
+        data-twe-target="#carouselExampleControls"
+        data-twe-slide="prev"
+        onClick={goToPrevSlide}
       >
-        <FaPlay className="mr-2" /> Start Journey
+        <span className="inline-block h-8 w-8">
+          <FaPlay className="h-6 w-6" />
+        </span>
+        <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+          Previous
+        </span>
+      </button>
+
+      {/* Carousel controls - next item */}
+      <button
+        className="absolute bottom-0 right-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+        type="button"
+        data-twe-target="#carouselExampleControls"
+        data-twe-slide="next"
+        onClick={goToNextSlide}
+      >
+        <span className="inline-block h-8 w-8">
+          <FaPlay className="h-6 w-6 transform rotate-180" />
+        </span>
+        <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+          Next
+        </span>
       </button>
     </div>
   );

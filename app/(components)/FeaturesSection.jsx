@@ -15,17 +15,16 @@ const features = [
 export default function FeaturesSection() {
   return (
     <section className="p-8 bg-blue-600 text-white">
-      <h2 className="text-4xl ">
-        <span className="text-blue-900">It's okay</span> not <br />
-        to be okay.
-      </h2>
-
-      <div className="flex items-center mx-auto justify-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center items-center">
         {features.map((feature, index) => (
-          <div key={index}>
-            <div className="flex items-center mb-2">
+          <div key={index} className="flex flex-col gap-2 md:ml-32">
+            <h2 className="text-4xl">
+              <span className="text-blue-900">It's okay</span> not <br />
+              to be okay.
+            </h2>
+            <div className="flex mb-2">
               {feature.icon}
-              <h3 className="text-xl ml-2">{feature.title}</h3>
+              <h3 className="text-xl -mt-2 ml-2">{feature.title}</h3>
             </div>
             <p className="mb-4">{feature.description}</p>
             {/* <button className="border border-white text-white rounded px-4 py-2">
@@ -33,12 +32,9 @@ export default function FeaturesSection() {
             </button> */}
           </div>
         ))}
-        <Image
-          src={"/phones.png"}
-          className="-mt-14"
-          width={200}
-          height={200}
-        ></Image>
+        <div className="md:col-span-1 flex justify-center">
+          <Image src={"/phones.png"} width={200} height={200} />
+        </div>
       </div>
     </section>
   );

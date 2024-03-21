@@ -103,7 +103,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-blue-600 border-b-4 border-blue-600 text-black py-4 flex items-center justify-between px-4">
+    <header className="bg-blue-600 border-b-4 border-blue-600 text-black py-1 flex items-center justify-between px-4">
       <div className="flex items-center">
         <Image
           width={50}
