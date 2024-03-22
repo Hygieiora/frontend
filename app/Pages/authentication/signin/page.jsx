@@ -3,8 +3,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-// import googleLogo from "../../public/googleLogo.jpg"; // Ensure you have the Google logo in your public folder
-
 
 // Functional component for the account creation form
 const SignIn = () => {
@@ -14,7 +12,7 @@ const SignIn = () => {
     console.log("Logged In"); // Placeholder for form submission logic
   };
 
-  const [email, setEmail] = useState("F");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState("");
 
@@ -93,15 +91,15 @@ const SignIn = () => {
 
           {/* Create account and Sign in buttons */}
           <div className="relative mb-4 py-3 flex justify-between items-center">
-            <Link href="">
+            <Link href="/Pages/authentication/signup">
               <button
-                type="submit"
+                // type="submit"
                 className="px-6 py-2 ml-6 bg-gray-300 text-black rounded-md hover:bg-gray-600"
               >
                 Create account
               </button>
             </Link>
-            <Link href="/pages/home">
+            <Link href="/">
               <button
                 type="submit"
                 className="px-10 py-2 mr-8 bg-blue-500 text-black rounded-md hover:bg-blue-600"
@@ -122,7 +120,7 @@ const SignIn = () => {
               <span className="text-sm text-gray-500">OR</span>
               <button className="flex items-center justify-center px-4 py-2 border rounded-md border-gray-300 shadow-sm hover:shadow-md mt-2">
                 <Image
-                  src="/googleLogo.jpg"
+                  src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
                   alt="Google Logo"
                   width={20}
                   height={20}

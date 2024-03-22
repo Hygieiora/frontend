@@ -14,6 +14,7 @@ const items = [
     description: "Choose your path to a sound and healthy life",
   },
 ];
+
 export default function HeroSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -24,6 +25,10 @@ export default function HeroSection() {
 
     return () => clearInterval(interval);
   }, []); // Run once on component mount
+
+  const goToSlide = (index) => {
+    setActiveIndex(index);
+  };
 
   const goToPrevSlide = () => {
     setActiveIndex((prevIndex) =>
@@ -53,7 +58,11 @@ export default function HeroSection() {
             data-twe-carousel-item
             data-twe-carousel-active
           >
-            <img src={item.imgPath} alt={item.alt} className="block w-full" />
+            <img
+              src={item.imgPath}
+              alt={item.title}
+              className="block w-full h-[400px] object-cover"
+            />
             <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col justify-center items-center text-white">
               <h2 className="text-4xl mb-4">{item.title}</h2>
               <p className="mb-8">{item.description}</p>
@@ -63,17 +72,27 @@ export default function HeroSection() {
                     Log In
                   </button>
                 </Link>
-                <Link href={"/Pages/authentication/sigup"}>
-                  <button
-                    className="border border-blue-500 text-blue-500 rounded px-4 py-2"
-                    onClick={() => setShowSignIn(true)}
-                  >
+                <Link href={"/Pages/authentication/signup"}>
+                  <button className="border border-blue-500 text-blue-500 rounded px-4 py-2">
                     Register
                   </button>
                 </Link>
               </div>
             </div>
           </div>
+        ))}
+      </div>
+
+      {/* Carousel indicators */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        {items.map((_, index) => (
+          <button
+            key={index}
+            className={`h-2 w-2 rounded-full ${
+              index === activeIndex ? "bg-white" : "bg-gray-400"
+            }`}
+            onClick={() => goToSlide(index)}
+          />
         ))}
       </div>
 
