@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { FaPlay } from "react-icons/fa";
+import Link from "next/link";
 
 const items = [
   {
@@ -57,15 +58,19 @@ export default function HeroSection() {
               <h2 className="text-4xl mb-4">{item.title}</h2>
               <p className="mb-8">{item.description}</p>
               <div className="flex items-center mb-4">
-                <button className="bg-blue-500 text-white rounded px-4 py-2 mr-2">
-                  Log In
-                </button>
-                <button
-                  className="border border-blue-500 text-blue-500 rounded px-4 py-2"
-                  onClick={() => setShowSignIn(true)}
-                >
-                  Register
-                </button>
+                <Link href={"/Pages/authentication/signin"}>
+                  <button className="bg-blue-500 text-white rounded px-4 py-2 mr-2">
+                    Log In
+                  </button>
+                </Link>
+                <Link href={"/Pages/authentication/sigup"}>
+                  <button
+                    className="border border-blue-500 text-blue-500 rounded px-4 py-2"
+                    onClick={() => setShowSignIn(true)}
+                  >
+                    Register
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
