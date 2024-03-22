@@ -93,7 +93,7 @@ const LoginForm = () => {
             <Link href={"/Pages/authentication/signup"}>
               <button
                 type="submit"
-                className="w-[180px] h-[60px] bg-blue-500 rounded-full text-lg font-normal font-normal text-black-400 mr-8"
+                className="w-[180px] h-[60px] bg-blue-500 rounded-full text-lg font-normal text-black-400 mr-8"
               >
                 Create account
               </button>
@@ -101,7 +101,7 @@ const LoginForm = () => {
             <Link href={"/Pages/homepage"}>
               <button
                 type="submit"
-                className="w-[180px] h-[60px] bg-blue-100 rounded-full text-lg font-normal font-normal text-black-400 mr-8"
+                className="w-[180px] h-[60px] bg-blue-100 rounded-full text-lg font-normal text-black-400 mr-8"
               >
                 Sign in
               </button>

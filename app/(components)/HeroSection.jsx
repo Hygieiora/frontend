@@ -64,10 +64,7 @@ export default function HeroSection() {
                   </button>
                 </Link>
                 <Link href={"/Pages/authentication/signup"}>
-                  <button
-                    className="border border-blue-500 text-blue-500 rounded px-4 py-2"
-                    onClick={() => setShowSignIn(true)}
-                  >
+                  <button className="border border-blue-500 text-blue-500 rounded px-4 py-2">
                     Register
                   </button>
                 </Link>
@@ -78,36 +75,38 @@ export default function HeroSection() {
       </div>
 
       {/* Carousel controls - prev item */}
-      <button
-        className="absolute bottom-0 right-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
-        type="button"
-        data-twe-target="#carouselExampleControls"
-        data-twe-slide="prev"
-        onClick={goToPrevSlide}
-      >
-        <span className="inline-block h-8 w-8">
-          <FaPlay className="h-6 w-6" />
-        </span>
-        <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-          Previous
-        </span>
-      </button>
+      <div className="carousel-buttons">
+        <button
+          className="absolute bottom-0 right-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+          type="button"
+          data-twe-target="#carouselExampleControls"
+          data-twe-slide="prev"
+          onClick={goToPrevSlide}
+        >
+          <span className="inline-block h-8 w-8">
+            <FaPlay className="h-6 w-6" />
+          </span>
+          <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+            Previous
+          </span>
+        </button>
 
-      {/* Carousel controls - next item */}
-      <button
-        className="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
-        type="button"
-        data-twe-target="#carouselExampleControls"
-        data-twe-slide="next"
-        onClick={goToNextSlide}
-      >
-        <span className="inline-block h-8 w-8">
-          <FaPlay className="h-6 w-6 transform rotate-180" />
-        </span>
-        <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-          Next
-        </span>
-      </button>
+        {/* Carousel controls - next item */}
+        <button
+          className="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
+          type="button"
+          data-twe-target="#carouselExampleControls"
+          data-twe-slide="next"
+          onClick={goToNextSlide}
+        >
+          <span className="inline-block h-8 w-8">
+            <FaPlay className="h-6 w-6 transform rotate-180" />
+          </span>
+          <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+            Next
+          </span>
+        </button>
+      </div>
     </div>
   );
 }
