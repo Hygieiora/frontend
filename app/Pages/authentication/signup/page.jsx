@@ -1,33 +1,73 @@
 "use client";
-// import "../globals.css";
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
-// import googleLogo from "../../public/googleLogo.jpg"; // Ensure you have the Google logo in your public folder
+import { FcGoogle } from "react-icons/fc";
 
 // Functional component for the account creation form
-const LoginForm = () => {
+const AccountForm = () => {
   // Handle form submission
-  const handleLogin = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault(); // Prevent default form submission behavior
-    console.log("Logged In"); // Placeholder for form submission logic
+    console.log("Form submitted"); // Placeholder for form submission logic
   };
 
+  // State variables for each input field
+  const [fullName, setFullName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("F");
   const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState("");
 
   // Form layout with Tailwind CSS classes
   return (
     <>
       <div className="max-w-md mx-auto bg-white p-5 rounded-md shadow-sm">
         <h2 className="text-blue-600 font-bold text-3xl mt-20 leading-normal">
-          WELCOME BACK
+          START YOUR JOURNEY
         </h2>
-        <h2 className="text-2xl font-bold text-gray-900">Sign In</h2>
-        <form onSubmit={handleLogin} className="mt-4">
+        <h2 className="text-2xl font-bold text-gray-900">Create new account</h2>
+        <form onSubmit={handleSubmit} className="mt-4">
           {/* Input fields with appropriate types and Tailwind CSS styling */}
-
+          <div className="relative mb-4">
+            <input
+              type="text"
+              id="fullname"
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
+              required
+              className={`w-full p-3 border border-gray-300 rounded-md transition-all duration-200 ease-in-out peer-focus:h-1/2 peer-focus:-translate-y-full peer-focus:pl-0 peer-focus:text-xs peer-focus:text-gray-700 peer-valid:h-1/2 peer-valid:-translate-y-full peer-valid:pl-0 peer-valid:text-xs peer-valid:text-gray-700" ${
+                fullName ? "pt-7" : ""
+              }`}
+            />
+            <label
+              htmlFor="fullname"
+              className={`absolute left-3 top-3 transition-all duration-200 ease-in-out peer-focus:h-1/2 peer-focus:-translate-y-full peer-focus:pl-0 peer-focus:text-xs peer-focus:text-gray-700 peer-valid:h-1/2 peer-valid:-translate-y-full peer-valid:pl-0 peer-valid:text-xs peer-valid:text-gray-700" ${
+                fullName ? "text-xs top-2" : "text-sm top-3.5"
+              }`}
+            >
+              Full name
+            </label>
+          </div>
+          {/* Repeat the same structure for other input fields */}
+          <div className="relative mb-4">
+            <input
+              type="tel"
+              id="phoneNumber"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              required
+              className={`w-full p-3 border border-gray-300 rounded-md transition-all duration-200 ease-in-out peer-focus:h-1/2 peer-focus:-translate-y-full peer-focus:pl-0 peer-focus:text-xs peer-focus:text-gray-700 peer-valid:h-1/2 peer-valid:-translate-y-full peer-valid:pl-0 peer-valid:text-xs peer-valid:text-gray-700" ${
+                phoneNumber ? "pt-7" : ""
+              }`}
+            />
+            <label
+              htmlFor="phoneNumber"
+              className={`absolute left-3 top-3 transition-all duration-200 ease-in-out peer-focus:h-1/2 peer-focus:-translate-y-full peer-focus:pl-0 peer-focus:text-xs peer-focus:text-gray-700 peer-valid:h-1/2 peer-valid:-translate-y-full peer-valid:pl-0 peer-valid:text-xs peer-valid:text-gray-700" ${
+                phoneNumber ? "text-xs top-2" : "text-sm top-3.5"
+              }`}
+            >
+              Phone Number
+            </label>
+          </div>
           {/* Email address */}
           <div className="relative mb-4">
             <input
@@ -70,67 +110,65 @@ const LoginForm = () => {
               Password
             </label>
           </div>
-
-          {/* Remember me and Forgot Password */}
-          <div className="flex justify-between items-center text-sm">
-            <label className="flex items-center ml-8">
-              <input
-                type="checkbox"
-                checked={rememberMe}
-                onChange={(e) => setRememberMe(e.target.checked)}
-                className="mr-2"
-              />
-              Remember me
-            </label>
-            <a
-              href="/forgot-password"
-              className="text-blue-500 hover:underline mr-8"
-            >
-              Forgot Password?
-            </a>
-          </div>
-
-          {/* Create account and Sign in buttons */}
-          <div className="relative mb-4 py-3 flex justify-between items-center">
-            <Link href="">
-              <button
-                type="submit"
-                className="px-6 py-2 ml-6 bg-gray-300 text-black rounded-md hover:bg-gray-600"
+          {/* Terms and Conditions */}
+          <div className="flex flex-col items-center justify-center text-sm text-gray-500">
+            <p>
+              By clicking "Create Account", you accept the
+              <Link
+                href="/pages/terms"
+                className="text-blue-500 hover:underline"
               >
-                Create account
-              </button>
-            </Link>
-            <Link href="/pages/home">
-              <button
-                type="submit"
-                className="px-10 py-2 mr-8 bg-blue-500 text-black rounded-md hover:bg-blue-600"
+                Terms
+              </Link>
+              , and ,
+              <Link
+                href="/pages/privacy"
+                className="text-blue-500 hover:underline"
               >
-                Sign in
-              </button>
-            </Link>
+                Privacy Policy
+              </Link>{" "}
+              of Hygieiora.
+            </p>
           </div>
-
-          {/* Note about completing profile */}
-          <p className="text-xs text-center text-gray-500">
-            *make sure you have completed your profile to access all features
-          </p>
+          {/* Submit button */}
+          <button
+            type="submit"
+            className="mt-4 w-full bg-blue-500 rounded-full text-black p-4 "
+            // w-[230px] h-[60px] bg-blue-100 rounded-full text-lg font-normal font-normal text-gray-400 mr-8
+          >
+            Create Account
+          </button>
 
           <div className="flex flex-col items-center space-y-3 p-3">
-            {/* Continue with Google button */}
-            <div className="flex flex-col items-center">
-              <span className="text-sm text-gray-500">OR</span>
-              <button className="flex items-center justify-center px-4 py-2 border rounded-md border-gray-300 shadow-sm hover:shadow-md mt-2">
-                <Image
-                  src="/googleLogo.jpg"
-                  alt="Google Logo"
-                  width={20}
-                  height={20}
-                />
-                <span className="ml-2 text-sm font-medium text-gray-700">
-                  Continue with Google
+            {/* Divider with text 'or' */}
+            <div className="w-full border-t border-gray-300">
+              <div className="relative -top-3 bg-white">
+                <span className="text-sm text-gray-500 p-5 flex flex-col items-center justify-center">
+                  or
                 </span>
-              </button>
+              </div>
             </div>
+
+            {/* Continue with Google button */}
+            <Link
+              href={"../homepage"}
+              className="border px-9 rounded-full py-1 flex align-center justify-center"
+            >
+              <FcGoogle className="w-[50px] h-[30px]  text-lg font-normal  mr-8" />
+              <p className="text-lg font-normal text-black-400 mr-8 flex items-center">
+                {""}
+                Continue with Google
+              </p>
+            </Link>
+
+            {/* Already on Hygieiora? Sign in */}
+            <p className="text-sm text-gray-600">
+              Already on Hygieiora?
+              <a href="./signin" className="text-blue-500 hover:underline">
+                {" "}
+                Sign in
+              </a>
+            </p>
           </div>
         </form>
       </div>
@@ -138,4 +176,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default AccountForm;

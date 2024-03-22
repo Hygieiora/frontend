@@ -1,13 +1,10 @@
 "use client";
-// import "../globals.css";
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
-// import googleLogo from "../../public/googleLogo.jpg"; // Ensure you have the Google logo in your public folder
-
+import { FcGoogle } from "react-icons/fc";
 
 // Functional component for the account creation form
-const SignIn = () => {
+const LoginForm = () => {
   // Handle form submission
   const handleLogin = (event) => {
     event.preventDefault(); // Prevent default form submission behavior
@@ -93,18 +90,18 @@ const SignIn = () => {
 
           {/* Create account and Sign in buttons */}
           <div className="relative mb-4 py-3 flex justify-between items-center">
-            <Link href="">
+            <Link href={"/Pages/authentication/signup"}>
               <button
                 type="submit"
-                className="px-6 py-2 ml-6 bg-gray-300 text-black rounded-md hover:bg-gray-600"
+                className="w-[180px] h-[60px] bg-blue-500 rounded-full text-lg font-normal font-normal text-black-400 mr-8"
               >
                 Create account
               </button>
             </Link>
-            <Link href="/pages/home">
+            <Link href={"/Pages/homepage"}>
               <button
                 type="submit"
-                className="px-10 py-2 mr-8 bg-blue-500 text-black rounded-md hover:bg-blue-600"
+                className="w-[180px] h-[60px] bg-blue-100 rounded-full text-lg font-normal font-normal text-black-400 mr-8"
               >
                 Sign in
               </button>
@@ -118,19 +115,22 @@ const SignIn = () => {
 
           <div className="flex flex-col items-center space-y-3 p-3">
             {/* Continue with Google button */}
-            <div className="flex flex-col items-center">
-              <span className="text-sm text-gray-500">OR</span>
-              <button className="flex items-center justify-center px-4 py-2 border rounded-md border-gray-300 shadow-sm hover:shadow-md mt-2">
-                <Image
-                  src="/googleLogo.jpg"
-                  alt="Google Logo"
-                  width={20}
-                  height={20}
-                />
-                <span className="ml-2 text-sm font-medium text-gray-700">
+            <div className="flex align-center justify-center my-5">
+              <span className=" inline-block w-20 h-1 bg-gray-300 mr-4 mt-3"></span>
+              <span className="text-gray-300">OR</span>
+              <span className=" inline-block w-20 h-1 bg-gray-300 ml-4 mt-3"></span>
+            </div>
+            <div className="flex align-center justify-center w-full h-[60px]">
+              <Link
+                href={"../homepage"}
+                className="border px-9 rounded-full py-1 flex items-center w-full"
+              >
+                <FcGoogle className=" w-[50px] h-[30px]  text-lg font-normal  mr-8" />
+                <p className="text-lg font-normal text-black-400 mr-8 flex items-center">
+                  {" "}
                   Continue with Google
-                </span>
-              </button>
+                </p>
+              </Link>
             </div>
           </div>
         </form>
@@ -139,4 +139,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default LoginForm;

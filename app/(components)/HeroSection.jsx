@@ -63,7 +63,7 @@ export default function HeroSection() {
                     Log In
                   </button>
                 </Link>
-                <Link href={"/Pages/authentication/sigup"}>
+                <Link href={"/Pages/authentication/signup"}>
                   <button
                     className="border border-blue-500 text-blue-500 rounded px-4 py-2"
                     onClick={() => setShowSignIn(true)}
