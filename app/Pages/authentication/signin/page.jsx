@@ -98,7 +98,7 @@ const LoginForm = () => {
                 Create account
               </button>
             </Link>
-            <Link href={"/Pages/homepage"}>
+            <Link href={"/"}>
               <button
                 type="submit"
                 className="w-[180px] h-[60px] bg-blue-100 rounded-full text-lg font-normal text-black-400 mr-8"

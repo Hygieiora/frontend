@@ -131,13 +131,15 @@ const AccountForm = () => {
             </p>
           </div>
           {/* Submit button */}
-          <button
-            type="submit"
-            className="mt-4 w-full bg-blue-500 rounded-full text-black p-4 "
-            // w-[230px] h-[60px] bg-blue-100 rounded-full text-lg font-normal font-normal text-gray-400 mr-8
-          >
-            Create Account
-          </button>
+          <Link href="/Pages/authentication/signin">
+            <button
+              type="submit"
+              className="mt-4 w-full bg-blue-500 rounded-full text-black p-4 "
+              // w-[230px] h-[60px] bg-blue-100 rounded-full text-lg font-normal font-normal text-gray-400 mr-8
+            >
+              Create Account
+            </button>
+          </Link>
 
           <div className="flex flex-col items-center space-y-3 p-3">
             {/* Divider with text 'or' */}
