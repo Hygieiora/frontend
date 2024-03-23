@@ -14,7 +14,7 @@ const AccountForm = () => {
   // State variables for each input field
   const [fullName, setFullName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [email, setEmail] = useState("F");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   // Form layout with Tailwind CSS classes

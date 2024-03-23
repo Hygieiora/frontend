@@ -61,7 +61,7 @@ export default function HeroSection() {
             <img
               src={item.imgPath}
               alt={item.title}
-              className="block w-full h-[400px] object-cover"
+              className="block w-full h-[600px] contain"
             />
             <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col justify-center items-center text-white">
               <h2 className="text-4xl mb-4">{item.title}</h2>
