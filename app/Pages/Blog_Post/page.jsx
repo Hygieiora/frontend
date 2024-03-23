@@ -19,7 +19,7 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="p-4 ml-4 mr-4">
+      <div className="p-3 m-4">
         <h1 className="text-2xl font-bold mb-4">Blog</h1>
         {articles.map((article, index) => (
           <ArticleCard
