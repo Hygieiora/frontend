@@ -1,8 +1,7 @@
 "use client";
-// import "../globals.css";
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { FcGoogle } from "react-icons/fc";
 
 // Functional component for the account creation form
 const AccountForm = () => {
@@ -15,7 +14,7 @@ const AccountForm = () => {
   // State variables for each input field
   const [fullName, setFullName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("F");
   const [password, setPassword] = useState("");
 
   // Form layout with Tailwind CSS classes
@@ -116,14 +115,14 @@ const AccountForm = () => {
             <p>
               By clicking "Create Account", you accept the
               <Link
-                href="/Pages/terms"
+                href="/pages/terms"
                 className="text-blue-500 hover:underline"
               >
                 Terms
               </Link>
               , and ,
               <Link
-                href="/Pages/privacy"
+                href="/pages/privacy"
                 className="text-blue-500 hover:underline"
               >
                 Privacy Policy
@@ -132,14 +131,13 @@ const AccountForm = () => {
             </p>
           </div>
           {/* Submit button */}
-          <Link href={"/Pages/authentication/signin"}>
-            <button
-              type="submit"
-              className="mt-4 w-full bg-blue-500 text-white p-4 rounded-md"
-            >
-              Create Account
-            </button>
-          </Link>
+          <button
+            type="submit"
+            className="mt-4 w-full bg-blue-500 rounded-full text-black p-4 "
+            // w-[230px] h-[60px] bg-blue-100 rounded-full text-lg font-normal font-normal text-gray-400 mr-8
+          >
+            Create Account
+          </button>
 
           <div className="flex flex-col items-center space-y-3 p-3">
             {/* Divider with text 'or' */}
@@ -152,25 +150,21 @@ const AccountForm = () => {
             </div>
 
             {/* Continue with Google button */}
-            <button className="flex items-center justify-center w-full px-4 py-2 border rounded-md border-gray-300 shadow-sm hover:shadow-md">
-              <Image
-                src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
-                alt="Google Logo"
-                width={20}
-                height={20}
-              ></Image>
-              <span className="ml-2 text-sm font-medium text-gray-700">
+            <Link
+              href={"../homepage"}
+              className="border px-9 rounded-full py-1 flex align-center justify-center"
+            >
+              <FcGoogle className="w-[50px] h-[30px]  text-lg font-normal  mr-8" />
+              <p className="text-lg font-normal text-black-400 mr-8 flex items-center">
+                {""}
                 Continue with Google
-              </span>
-            </button>
+              </p>
+            </Link>
 
             {/* Already on Hygieiora? Sign in */}
             <p className="text-sm text-gray-600">
               Already on Hygieiora?
-              <a
-                href="/Pages/authentication/signin"
-                className="text-blue-500 hover:underline"
-              >
+              <a href="./signin" className="text-blue-500 hover:underline">
                 {" "}
                 Sign in
               </a>
