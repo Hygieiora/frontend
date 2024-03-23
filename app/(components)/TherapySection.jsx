@@ -21,7 +21,7 @@ export default function TherapySection() {
               mental health services.
               <br className="" /> Our Ai powered chatbot is built with your
               privacy and protection in mind, so you can trust us with your
-              personal data while you seek herpy.
+              personal data while you seek therapy.
             </p>
           </div>
         </div>
@@ -29,7 +29,7 @@ export default function TherapySection() {
       {/* After border */}
       <section className="p-8 bg-white border-b-8 border-blue-600  md:mx-32 gap-8 flex text-black">
         <div className="">
-          <Image src={"/map.png"} width={20} height={20} />
+          <Image src={"/map.png"} width={20} height={20} alt="map" />
 
           <div className="flex ml-6 -mt-6 mb-6 flex-col">
             <h3 className="font-bold text-xl mb-2">Crisis Intervention </h3>
@@ -43,13 +43,13 @@ export default function TherapySection() {
             <h3 className="font-bold text-xl mb-2">Privacy policy </h3>
             <p>
               See how we respect and protect your data in compliance with
-              industry standards.  View more.
+              industry standards. View more.
             </p>
           </div>
         </div>
         {/* second */}
         <div className="">
-          <Image src={"/map.png"} width={20} height={20} />
+          <Image src={"/map.png"} width={20} height={20} alt="map" />
 
           <div className="flex ml-6 -mt-6 mb-6 flex-col">
             <h3 className="font-bold text-xl mb-2">Client Support </h3>
@@ -58,7 +58,7 @@ export default function TherapySection() {
               and after therapy sessions, such as self-help guides. View more.
             </p>
           </div>
-          <Image src={"/map.png"} width={20} height={20} />
+          <Image src={"/map.png"} width={20} height={20} alt="map" />
 
           <div className="flex ml-6 -mt-6 mb-6 flex-col">
             <h3 className="font-bold text-xl mb-2">Accessibility</h3>
