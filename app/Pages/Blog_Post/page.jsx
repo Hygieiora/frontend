@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import ArticleCard from "../../(components)/ArticleCard";
-// import SideNav from "../../(components)/sideNav";
+import SideNav from "../../(components)/sideNav";
 import AddButton from "../../(components)/AddButton";
 
 // The main page component that renders article cards and the add button.
@@ -18,7 +18,8 @@ const HomePage = () => {
 
   return (
     <>
-      {/* <SideNav /> */}
+    <main className="flex ">
+      <SideNav />
       <div className="p-3 m-4">
         <h1 className="text-2xl font-bold mb-4">Blog</h1>
         {articles.map((article, index) => (
@@ -30,6 +31,7 @@ const HomePage = () => {
         ))}
         <AddButton onAdd={handleAddArticle} />
       </div>
+      </main>
     </>
   );
 };

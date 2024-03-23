@@ -10,10 +10,10 @@ const SideNav = () => {
     { title: "Dashboard", src: "Dashboard", link: "/" },
     { title: "Blog Post", src: "Blog Post", link: "/Pages/Blog_Post" },
     {
-      title: "Hycres Hub",
+      title: "Hycares Hub",
       src: "Hycres Hub",
       gap: true,
-      link: "/Pages/Hycres_Hub",
+      link: "/Pages/Hycares_Hub",
     },
     {
       title: "Notifications",
@@ -21,11 +21,12 @@ const SideNav = () => {
       link: "/Pages/Notifications",
     },
     { title: "Profile", src: "Profile", gap: true, link: "/Pages/Profile" },
+
   ];
 
   return (
-    <div className="relative border-blue-600 border-r-4 bg-blue-600 hidden md:block">
-      <div
+    <div className="h-full border-blue-600 bottom-0 border-r-4 bg-blue-600 sticky top-0">
+    <div
         className={`${
           open ? "w-60" : "w-20"
         } bg-blue-600  p-5 pt-8 duration-300`}

@@ -22,11 +22,11 @@ const Profile = () => {
               src="/logo.png"
               alt="User Image"
             />
-            <h5 className="mb-1 text-2xl font-bold text-gray-500 dark:text-white">
-              Handsome Musah
+            <h5 className="mb-1 text-2xl font-bold text-gray-500 dark:text-gray-600">
+              Student Name
             </h5>
             <p className="text-xl font-bold text-gray-500 dark:text-gray-300">
-              Gamer
+              Student
             </p>
             <p className="text-xl font-bold text-gray-500 dark:text-gray-300">
               Student ID: 123456
@@ -37,7 +37,7 @@ const Profile = () => {
           </div>
 
           {/* Profile Details Section */}
-          <section className="w-full text-xl font-bold text-gray-500 bg-white border mt-10 border-blue-600 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ">
+          <section className="w-full text-xl font-bold text-gray-500 bg-white border mt-10 border-blue-600 rounded-lg shadow  ">
             <div className="flex flex-col items-center border-b border-blue-600 mx-5 p-3">
               Profile Details
             </div>
@@ -52,7 +52,7 @@ const Profile = () => {
                   id=""
                   type="text"
                   className="border  border-gray-300 rounded-md p-2 w-full"
-                  placeholder="Handsome"
+                  placeholder="First Name"
                 />
               </div>
               {/* Other Name(s) */}
@@ -64,7 +64,7 @@ const Profile = () => {
                   id=""
                   type="text"
                   className="border border-gray-300 rounded-md p-2 w-full"
-                  placeholder="Musah"
+                  placeholder="Surname "
                 />
               </div>
               {/* Birth Date */}
@@ -100,7 +100,7 @@ const Profile = () => {
                   id=""
                   type="email"
                   className="border border-gray-300 rounded-md p-2 w-full"
-                  placeholder="Hmusah@st.knust.edu.gh"
+                  placeholder="student@st.knust.edu.gh"
                 />
               </div>
               {/* KNUST Mobile Number*/}
