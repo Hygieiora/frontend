@@ -22,9 +22,9 @@ const HomePage = () => {
   ];
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">HyCare HUB</h1>
-      <div className="flex">
+    <div className="p-4 ">
+      <h1 className="text-center text-2xl font-bold mb-4">HyCare HUB</h1>
+      <div className="flex items-center justify-center">
         <Tab
           label="Upcoming Events"
           isActive={activeTab === "Upcoming Events"}

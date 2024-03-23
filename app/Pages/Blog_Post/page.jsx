@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import ArticleCard from "../../(components)/ArticleCard";
-// import AddButton from "../../components/AddButton";
+
 import AddButton from "../../(components)/AddButton";
-import SideNav from "../../(components)/sideNav";
+
 
 // The main page component that renders article cards and the add button.
 const HomePage = () => {
