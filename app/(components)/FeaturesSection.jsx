@@ -19,7 +19,7 @@ export default function FeaturesSection() {
         {features.map((feature, index) => (
           <div key={index} className="flex flex-col gap-2 md:ml-32">
             <h2 className="text-4xl">
-              <span className="text-blue-900">It's okay</span> not <br />
+              <span className="text-blue-900">It&apos;s okay</span> not <br />
               to be okay.
             </h2>
             <div className="flex mb-2">

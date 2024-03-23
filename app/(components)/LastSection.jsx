@@ -6,7 +6,9 @@ export default function LastSection() {
   return (
     <>
       <section className="p-8 bg-white flex items-center justify-items-center flex-col text-black">
-        <h1 className="text-2xl font-bold mb-2">Here's how to get therapy</h1>
+        <h1 className="text-2xl font-bold mb-2">
+          Here&apos;s how to get therapy
+        </h1>
         <p className="text-sm mb-8">Your health your call </p>
         <section className="flex justify-between gap-5 mx-auto flex-row">
           <div className="flex flex-col  items-center text-center">
