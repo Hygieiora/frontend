@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Tab from "../../(components)/Tab";
 import UpcomingEvents from "../../(components)/Hycares_Hub/UpcomingEvents";
 import FeaturedArticles from "../../(components)/Hycares_Hub/FeaturedArticles";
-
+import MobileNavBar from "../../(components)/MobileNavBar";
 // The main page component that renders the tabs.
 const HomePage = () => {
   const [activeTab, setActiveTab] = useState("Upcoming Events");
@@ -21,7 +21,8 @@ const HomePage = () => {
     { title: "Article 3", excerpt: "This is the excerpt for Article 3." },
   ];
 
-  return (
+  return (<>
+      {/* <MobileNavBar/> */}
     <div className="p-4 ">
       <h1 className="text-center text-2xl font-bold mb-4">HyCare HUB</h1>
       <div className="flex items-center justify-center">
@@ -41,6 +42,7 @@ const HomePage = () => {
         <FeaturedArticles articles={articles} />
       )}
     </div>
+    </>
   );
 };
 

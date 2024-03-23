@@ -2,7 +2,7 @@
 import SideNav from "../../(components)/sideNav";
 import Link from "next/link";
 import Image from "next/image";
-import MobileNavBar from "../../(components)/mobileNavBar";
+// import MobileNavBar from "../../(components)/mobileNavBar";
 import Footer from "../../(components)/Footer";
 const Profile = () => {
   return (
