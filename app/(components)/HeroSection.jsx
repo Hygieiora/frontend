@@ -13,6 +13,11 @@ const items = [
     title: "Ready To Get Started?",
     description: "Choose your path to a sound and healthy life",
   },
+  {
+    imgPath: "03.jpg",
+    title: "Ready To Get Started?",
+    description: "Choose your path to a sound and healthy life",
+  },
 ];
 
 export default function HeroSection() {
@@ -30,13 +35,13 @@ export default function HeroSection() {
     setActiveIndex(index);
   };
 
-  const goToPrevSlide = () => {
+  const goToNextSlide = () => {
     setActiveIndex((prevIndex) =>
       prevIndex === 0 ? items.length - 1 : prevIndex - 1
     );
   };
 
-  const goToNextSlide = () => {
+  const goToPrevSlide = () => {
     setActiveIndex((prevIndex) => (prevIndex + 1) % items.length);
   };
 
