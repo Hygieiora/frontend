@@ -13,6 +13,11 @@ const items = [
     title: "Ready To Get Started?",
     description: "Choose your path to a sound and healthy life",
   },
+  {
+    imgPath: "03.jpg",
+    title: "Ready To Get Started?",
+    description: "Choose your path to a sound and healthy life",
+  },
 ];
 
 export default function HeroSection() {
