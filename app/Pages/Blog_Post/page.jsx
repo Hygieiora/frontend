@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import ArticleCard from "../../(components)/ArticleCard";
 import SideNav from "../../(components)/sideNav";
 import AddButton from "../../(components)/AddButton";
-
+import MobileNavBar from "../../(components)/mobileNavBar";
+import Header from "../../(components)/Header";
 // The main page component that renders article cards and the add button.
 const HomePage = () => {
   const [articles, setArticles] = useState([
@@ -18,19 +19,21 @@ const HomePage = () => {
 
   return (
     <>
-    <main className="flex ">
-      <SideNav />
-      <div className="p-3 m-4">
-        <h1 className="text-2xl font-bold mb-4">Blog</h1>
-        {articles.map((article, index) => (
-          <ArticleCard
-            key={index}
-            title={article.title}
-            excerpt={article.excerpt}
-          />
-        ))}
-        <AddButton onAdd={handleAddArticle} />
-      </div>
+      <Header isFirstPage={false} />
+      <main className="flex ">
+        <SideNav />
+        <MobileNavBar />
+        <div className="p-3 m-4">
+          <h1 className="text-2xl font-bold mb-4">Blog</h1>
+          {articles.map((article, index) => (
+            <ArticleCard
+              key={index}
+              title={article.title}
+              excerpt={article.excerpt}
+            />
+          ))}
+          <AddButton onAdd={handleAddArticle} />
+        </div>
       </main>
     </>
   );

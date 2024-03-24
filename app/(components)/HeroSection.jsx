@@ -71,12 +71,12 @@ export default function HeroSection() {
               <p className="mb-8">{item.description}</p>
               <div className="flex items-center mb-4">
                 <Link href={"/Pages/authentication/signin"}>
-                  <button className="bg-blue-500 text-white rounded px-4 py-2 mr-2">
+                  <button className="bg-blue-600 text-white hover:bg-white hover:text-blue-600  rounded px-4 py-2 mr-2">
                     Log In
                   </button>
                 </Link>
                 <Link href={"/Pages/authentication/signup"}>
-                  <button className="border border-blue-500 text-blue-500 rounded px-4 py-2">
+                  <button className="border border-blue-600 text-blue-600 hover:border-white hover:text-white rounded px-4 py-2">
                     Register
                   </button>
                 </Link>
@@ -92,7 +92,7 @@ export default function HeroSection() {
           <button
             key={index}
             className={`h-2 w-2 rounded-full ${
-              index === activeIndex ? "bg-white" : "bg-gray-400"
+              index === activeIndex ? "bg-white" : "bg-gray-600"
             }`}
             onClick={() => goToSlide(index)}
           />

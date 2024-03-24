@@ -1,15 +1,17 @@
 "use client";
 import SideNav from "../../(components)/sideNav";
+import MobileNavBar from "../../(components)/mobileNavBar";
 import Link from "next/link";
 import Image from "next/image";
-// import MobileNavBar from "../../(components)/mobileNavBar";
+import Header from "../../(components)/Header";
 import Footer from "../../(components)/Footer";
 const Profile = () => {
   return (
     <>
+      <Header />
       <main className=" min-h-screen flex text-sm sm:text-base">
         <SideNav />
-        {/* <MobileNavBar /> */}
+        <MobileNavBar />
         <section className="w-full bg-white m-10 border-blue-600 ">
           <div className="flex flex-col border rounded border-blue-600 items-center pb-10">
             <div className="flex items-center font-bold text-3xl justify-center text-center text-white w-full p-12 bg-blue-600">

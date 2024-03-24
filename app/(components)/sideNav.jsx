@@ -24,7 +24,7 @@ const SideNav = () => {
   ];
 
   return (
-    <div className="h-screen border-blue-600 bottom-0 border-r-4 bg-blue-600 sticky top-0">
+    <div className="h-screen border-blue-600 bottom-0 border-r-4 bg-blue-600 sticky top-0 hidden md:block">
       <div
         className={`${
           open ? "w-60" : "w-20"
@@ -45,7 +45,7 @@ const SideNav = () => {
             <a href={Menu.link} key={index}>
               <span
                 className={`flex rounded-md p-2 cursor-pointer hover:bg-gray-900 text-white text-md font-semibold items-center gap-x-4 ${
-                  Menu.gap ? "mt-9" : "mt-2"
+                  Menu.gap ? "mt-9" : "mt-9"
                 } ${activeMenu === index ? "bg-darkGray text-white" : ""}`}
               >
                 <Image

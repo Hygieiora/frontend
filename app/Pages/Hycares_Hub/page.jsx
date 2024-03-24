@@ -4,7 +4,8 @@ import Tab from "../../(components)/Tab";
 import SideNav from "../../(components)/sideNav";
 import UpcomingEvents from "../../(components)/Hycares_Hub/UpcomingEvents";
 import FeaturedArticles from "../../(components)/Hycares_Hub/FeaturedArticles";
-import MobileNavBar from "../../(components)/MobileNavBar";
+import MobileNavBar from "../../(components)/mobileNavBar";
+import Header from "../../(components)/Header";
 // The main page component that renders the tabs.
 const HomePage = () => {
   const [activeTab, setActiveTab] = useState("Upcoming Events");
@@ -24,9 +25,11 @@ const HomePage = () => {
 
   return (
     <>
+      <Header isFirstPage={false} />
       {/* <MobileNavBar/> */}
       <main className="flex ">
         <SideNav />
+        <MobileNavBar />
         <div className="p-4 ">
           <h1 className="text-center text-2xl font-bold mb-4">HyCare HUB</h1>
           <div className="flex items-center justify-center">
