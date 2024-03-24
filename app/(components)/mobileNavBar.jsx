@@ -6,7 +6,7 @@ const MobileNavBar = () => {
   return (
     <div className="  fixed bottom-0 left-0 w-full bg-blue-600 flex justify-around py-4 px-6 z-50 rounded-t-3xl md:hidden">
       <Link href="/">
-        <Image width={30} height={30} src="/assets/Dashboard.png" alt="Home" />
+        <Image width={30} height={30} src="/assets/DashBoard.png" alt="Home" />
       </Link>
       <Link href="/Pages/Blog_Post">
         <Image width={30} height={30} src="/assets/Blog Post.png" alt="Home" />
@@ -23,12 +23,12 @@ const MobileNavBar = () => {
         <Image
           width={30}
           height={30}
-          src="/assets/notifications.png"
+          src="/assets/Notifications.png"
           alt="Notifications"
         />
       </Link>
       <Link href="/Pages/Profile">
-        <Image width={30} height={30} src="/assets/profile.png" alt="Profile" />
+        <Image width={30} height={30} src="/assets/Profile.png" alt="Profile" />
       </Link>
     </div>
   );
