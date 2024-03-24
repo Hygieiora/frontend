@@ -54,14 +54,14 @@ export default function HeroSection() {
             key={index}
             className={`relative float-left ${
               index === activeIndex ? "" : "hidden"
-            } w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none`}
+            } w-full transition-transform duration-[300ms] ease-in-out motion-reduce:transition-none`}
             data-twe-carousel-item
             data-twe-carousel-active
           >
             <img
               src={item.imgPath}
               alt={item.title}
-              className="block w-full h-[60vh] md:h-[90vh] contain"
+              className=""
             />
             <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col justify-center items-center text-white">
               <h2 className="text-4xl mb-4">{item.title}</h2>
