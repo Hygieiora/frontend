@@ -7,7 +7,7 @@ const SideNav = () => {
   const [activeMenu, setActiveMenu] = useState(0); // State to track active menu index
 
   const Menus = [
-    { title: "Dashboard", src: "Dashboard", link: "/" },
+    { title: "Dashboard", src: "DashBoard", link: "/" },
     { title: "Blog Post", src: "Blog Post", link: "/Pages/Blog_Post" },
     {
       title: "Hycares Hub",
