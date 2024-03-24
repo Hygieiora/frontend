@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Header = ({ isFirstPage }) => {
   return (
-    <header className="bg-blue-600 border-b-4 border-blue-600 text-black py-1 flex items-center justify-between px-4">
+    <header className="fixed top-0 w-full z-50 bg-blue-600 border-b-4 border-blue-600 text-black py-1 flex items-center justify-between px-4">
       <div className="flex items-center">
         <Link href={"/"} className="flex">
           <Image

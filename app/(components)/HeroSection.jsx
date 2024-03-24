@@ -48,25 +48,25 @@ export default function HeroSection() {
   return (
     <div
       id="carouselExampleControls"
-      className="relative"
+      className="relative w-full h-screen overflow-hidden" // Use h-screen for full height
       data-twe-carousel-init
       data-twe-ride="carousel"
     >
       {/* Carousel items */}
-      <div className="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
+      <div className="relative w-full h-full overflow-hidden">
         {items.map((item, index) => (
           <div
             key={index}
-            className={`relative float-left ${
+            className={`relative w-full h-full transition-all duration-500 ease-in-out delay-150 ${
               index === activeIndex ? "" : "hidden"
-            } w-full transition-transform duration-[300ms] ease-in-out motion-reduce:transition-none`}
+            }`} // Add transition property
             data-twe-carousel-item
             data-twe-carousel-active
           >
             <img
               src={item.imgPath}
               alt={item.title}
-              className=""
+              className="w-full h-[100vh] object-cover"
             />
             <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex flex-col justify-center items-center text-white">
               <h2 className="text-4xl mb-4">{item.title}</h2>
