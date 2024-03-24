@@ -7,7 +7,7 @@ import Footer from ".//(components)/Footer";
 import CookiesSection from ".//(components)/CookiesSection";
 import SideNav from ".//(components)/sideNav";
 import Header from "./(components)/Header";
-// import MobileNavBar from ".//(components)/MobileNavBar";
+import MobileNavBar from ".//(components)/mobileNavBar";
 export default function HomePage() {
   return (
     <>
@@ -18,7 +18,7 @@ export default function HomePage() {
       <TherapySection />
       <LastSection />
       <Footer />
-      {/* <MobileNavBar/> */}
+      <MobileNavBar />
       {/* <CookiesSection /> */}
       {/* Add other sections here */}
     </>
