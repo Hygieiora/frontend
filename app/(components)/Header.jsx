@@ -7,14 +7,16 @@ const Header = ({ isFirstPage }) => {
   return (
     <header className="bg-blue-600 border-b-4 border-blue-600 text-black py-1 flex items-center justify-between px-4">
       <div className="flex items-center">
-        <Image
-          width={50}
-          height={140}
-          src="/assets/splash.png" // Path to your logo image
-          alt="Logo"
-          className="mr-4"
-        />
-        <h1 className="text-3xl text-white font-bold">Hygieiora</h1>
+        <Link href={"/"} className="flex">
+          <Image
+            width={50}
+            height={140}
+            src="/assets/splash.png" // Path to your logo image
+            alt="Logo"
+            className="mr-4"
+          />
+          <h1 className="text-3xl text-white font-bold mt-3">Hygieiora</h1>
+        </Link>
       </div>
       {isFirstPage && (
         <nav className="hidden md:flex flex-grow items-center justify-center">

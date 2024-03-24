@@ -6,11 +6,10 @@ import UpcomingEvents from "../../(components)/Hycares_Hub/UpcomingEvents";
 import FeaturedArticles from "../../(components)/Hycares_Hub/FeaturedArticles";
 import MobileNavBar from "../../(components)/mobileNavBar";
 import Header from "../../(components)/Header";
-// The main page component that renders the tabs.
+
 const HomePage = () => {
   const [activeTab, setActiveTab] = useState("Upcoming Events");
 
-  // Sample data can be replaced with actual data fetched from an API.
   const events = [
     { title: "Event 1", description: "This is the description for Event 1." },
     { title: "Event 2", description: "This is the description for Event 2." },
@@ -26,13 +25,12 @@ const HomePage = () => {
   return (
     <>
       <Header isFirstPage={false} />
-      {/* <MobileNavBar/> */}
-      <main className="flex ">
+      <main className="flex h-screen overflow-hidden">
         <SideNav />
         <MobileNavBar />
-        <div className="p-4 ">
+        <div className="p-4 flex flex-col justify-center w-full">
           <h1 className="text-center text-2xl font-bold mb-4">HyCare HUB</h1>
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center mb-4">
             <Tab
               label="Upcoming Events"
               isActive={activeTab === "Upcoming Events"}
@@ -44,12 +42,14 @@ const HomePage = () => {
               onClick={() => setActiveTab("Featured Articles")}
             />
           </div>
-          {activeTab === "Upcoming Events" && (
-            <UpcomingEvents events={events} />
-          )}
-          {activeTab === "Featured Articles" && (
-            <FeaturedArticles articles={articles} />
-          )}
+          <div className="flex-grow overflow-y-auto">
+            {activeTab === "Upcoming Events" && (
+              <UpcomingEvents events={events} />
+            )}
+            {activeTab === "Featured Articles" && (
+              <FeaturedArticles articles={articles} />
+            )}
+          </div>
         </div>
       </main>
     </>
