@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Tab from "../../(components)/Tab";
+import SideNav from "../../(components)/sideNav";
 import UpcomingEvents from "../../(components)/Hycares_Hub/UpcomingEvents";
 import FeaturedArticles from "../../(components)/Hycares_Hub/FeaturedArticles";
 import MobileNavBar from "../../(components)/MobileNavBar";
@@ -21,27 +22,33 @@ const HomePage = () => {
     { title: "Article 3", excerpt: "This is the excerpt for Article 3." },
   ];
 
-  return (<>
+  return (
+    <>
       {/* <MobileNavBar/> */}
-    <div className="p-4 ">
-      <h1 className="text-center text-2xl font-bold mb-4">HyCare HUB</h1>
-      <div className="flex items-center justify-center">
-        <Tab
-          label="Upcoming Events"
-          isActive={activeTab === "Upcoming Events"}
-          onClick={() => setActiveTab("Upcoming Events")}
-        />
-        <Tab
-          label="Featured Articles"
-          isActive={activeTab === "Featured Articles"}
-          onClick={() => setActiveTab("Featured Articles")}
-        />
-      </div>
-      {activeTab === "Upcoming Events" && <UpcomingEvents events={events} />}
-      {activeTab === "Featured Articles" && (
-        <FeaturedArticles articles={articles} />
-      )}
-    </div>
+      <main className="flex ">
+        <SideNav />
+        <div className="p-4 ">
+          <h1 className="text-center text-2xl font-bold mb-4">HyCare HUB</h1>
+          <div className="flex items-center justify-center">
+            <Tab
+              label="Upcoming Events"
+              isActive={activeTab === "Upcoming Events"}
+              onClick={() => setActiveTab("Upcoming Events")}
+            />
+            <Tab
+              label="Featured Articles"
+              isActive={activeTab === "Featured Articles"}
+              onClick={() => setActiveTab("Featured Articles")}
+            />
+          </div>
+          {activeTab === "Upcoming Events" && (
+            <UpcomingEvents events={events} />
+          )}
+          {activeTab === "Featured Articles" && (
+            <FeaturedArticles articles={articles} />
+          )}
+        </div>
+      </main>
     </>
   );
 };

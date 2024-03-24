@@ -21,12 +21,11 @@ const SideNav = () => {
       link: "/Pages/Notifications",
     },
     { title: "Profile", src: "Profile", gap: true, link: "/Pages/Profile" },
-
   ];
 
   return (
-    <div className="h-full border-blue-600 bottom-0 border-r-4 bg-blue-600 sticky top-0">
-    <div
+    <div className="h-screen border-blue-600 bottom-0 border-r-4 bg-blue-600 sticky top-0">
+      <div
         className={`${
           open ? "w-60" : "w-20"
         } bg-blue-600  p-5 pt-8 duration-300`}
@@ -41,27 +40,6 @@ const SideNav = () => {
           onClick={() => setOpen(!open)}
           alt={"control"}
         />
-        {/* <Link href="/homepage">
-          <div className="flex gap-x-4 items-center">
-            <Image
-              width={28}
-              height={28}
-              src="/logo.png"
-              className={`cursor-pointer duration-500 h-10 w-10 ${
-                open && "rotate-[360deg]"
-              }`}
-              alt={"logo"}
-            />
-            <h1
-              className={`text-white origin-left font-bold text-xl duration-200 ${
-                !open && "scale-0"
-              }`}
-            >
-              Hygieiora
-            </h1>
-          </div>
-        </Link> */}
-
         <ul className="">
           {Menus.map((Menu, index) => (
             <a href={Menu.link} key={index}>
