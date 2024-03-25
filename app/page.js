@@ -14,6 +14,7 @@ export default function HomePage() {
     <>
       <Header isFirstPage={true} />
       {/* <SideNav /> */}
+      <CookiesSection />
       <HeroSection />
       {/* <HomeSection /> */}
       <FeaturesSection />

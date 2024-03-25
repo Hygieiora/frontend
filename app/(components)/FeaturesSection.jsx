@@ -4,7 +4,7 @@ import Image from "next/image";
 // Sample data for the features/services, replace with your actual data
 const features = [
   {
-    icon: <FaLock className="text-white" />, // Replace with your actual icons
+    icon: <FaLock className="text-white text-lg" />, // Replace with your actual icons
     title: "Hygieiora Inc",
     description:
       "Experience the future of therapy with Hygieiora - a unique space for individuals to connect with professional therapists and volunteers in fostering a supportive community dedicated to enhancing mental well-being ",

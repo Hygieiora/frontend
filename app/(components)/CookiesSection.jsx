@@ -1,32 +1,25 @@
-// Import necessary dependencies
 import { useState } from "react";
-import { FaTimes } from "react-icons/fa"; // Import the icons you need
+import { FaTimes } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
+// import "aos/dist/aos";
+AOS.init(); // Initialize the AOS library
 
 export default function CookiesSection() {
-  const [isOpen, setIsOpen] = useState(false); // State to control the open/close of the modal
+  const [isOpen, setIsOpen] = useState(true);
 
-  // Function to open the modal
-  const handleOpen = () => {
-    setIsOpen(true);
-  };
-
-  // Function to close the modal
   const handleClose = () => {
     setIsOpen(false);
   };
 
   return (
     <div>
-      <button
-        onClick={handleOpen}
-        className="bg-blue-500 text-white rounded px-4 py-2"
-      >
-        Show Cookie Policy
-      </button>
-
       {isOpen && (
-        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg overflow-auto p-8 m-4 max-w-xl">
+        <div
+          className="fixed py-4 my-6 mr-2 bottom-0 w-full z-10"
+          data-aos="slide-in" // This will animate the div to slide up
+        >
+          <div className="bg-gray-400 rounded-lg overflow-auto p-8 m-4 w-full">
             <button onClick={handleClose} className="float-right">
               <FaTimes />
             </button>
@@ -43,10 +36,6 @@ export default function CookiesSection() {
               Accept Cookies
             </button>
           </div>
-          <div
-            onClick={handleClose}
-            className="fixed top-0 left-0 w-full h-full bg-black opacity-50"
-          ></div>
         </div>
       )}
     </div>
