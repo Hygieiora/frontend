@@ -8,7 +8,7 @@ const Notifications = () => {
     <>
       <Header isFirstPage={false} />
       <main className=" min-h-screen p-4 flex justify-center items-center">
-        <SideNav />
+        {/* <SideNav /> */}
         <MobileNavBar />
         <h1 className=" font-black">
           Hold on, we are connecting you to an expert...

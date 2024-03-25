@@ -34,7 +34,7 @@ const SideNav = () => {
           width={28}
           height={28}
           src="/assets/control.png"
-          className={`absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple border-2 rounded-full ${
+          className={`absolute mt-10 cursor-pointer -right-3 top-9 w-7 border-white border-2 rounded-full ${
             !open && "rotate-180"
           }`}
           onClick={() => setOpen(!open)}
