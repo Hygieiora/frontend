@@ -60,7 +60,7 @@ const SplashScreen = ({ finishLoading }) => {
     >
       <Image
         id="logo"
-        src="/assets/Splash.png"
+        src="/assets/splash.png"
         alt=""
         width={200}
         height={200}
