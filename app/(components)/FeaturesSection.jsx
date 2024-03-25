@@ -17,7 +17,7 @@ export default function FeaturesSection() {
     <section className="p-8 bg-blue-600 text-white">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center items-center">
         {features.map((feature, index) => (
-          <div key={index} className="flex flex-col gap-2 md:ml-32">
+          <div key={index} className=" py-10 flex flex-col gap-2 md:ml-32">
             <h2 className="text-4xl">
               <span className="text-blue-900">It&apos;s okay</span> not <br />
               to be okay.

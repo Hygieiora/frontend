@@ -1,5 +1,6 @@
 "use client";
 import HeroSection from ".//(components)/HeroSection";
+// import HomeSection from ".//(components)/HomeSection";
 import FeaturesSection from ".//(components)/FeaturesSection";
 import TherapySection from ".//(components)/TherapySection";
 import LastSection from ".//(components)/LastSection";
@@ -14,6 +15,7 @@ export default function HomePage() {
       <Header isFirstPage={true} />
       {/* <SideNav /> */}
       <HeroSection />
+      {/* <HomeSection /> */}
       <FeaturesSection />
       <TherapySection />
       <LastSection />
