@@ -12,7 +12,7 @@ const Profile = () => {
       <main className=" min-h-screen flex text-sm sm:text-base">
         <SideNav />
         <MobileNavBar />
-        <section className="w-full bg-white m-10 border-blue-600 ">
+        <section className="w-full bg-white m-5 border-blue-600 ">
           <div className="flex flex-col border rounded border-blue-600 items-center pb-10">
             <div className="flex items-center font-bold text-3xl justify-center text-center text-white w-full p-12 bg-blue-600">
               STUDENT PROFILE
@@ -156,7 +156,6 @@ const Profile = () => {
               </Link>
             </div>
           </section>
-          <div className="p-10"></div>
         </section>
       </main>
       <Footer />
