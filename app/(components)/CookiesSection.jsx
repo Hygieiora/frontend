@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaTimes } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
-// import "aos/dist/aos";
-AOS.init(); // Initialize the AOS library
 
 export default function CookiesSection() {
   const [isOpen, setIsOpen] = useState(true);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      AOS.init(); // Initialize the AOS library
+    }
+  }, []); // Run only once on component mount
 
   const handleClose = () => {
     setIsOpen(false);
