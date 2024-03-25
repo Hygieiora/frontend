@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import ArticleCard from "../../(components)/ArticleCard";
 import SideNav from "../../(components)/sideNav";
-import AddButton from "../../(components)/AddButton";
+import AddButton from "../../(components)/Blog_Post/AddButton";
 import MobileNavBar from "../../(components)/mobileNavBar";
 import Header from "../../(components)/Header";
 // The main page component that renders article cards and the add button.

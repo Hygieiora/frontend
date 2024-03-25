@@ -1,11 +1,11 @@
 "use client";
-import HeroSection from ".//(components)/HeroSection";
+import HeroSection from ".//(components)/Homepage/HeroSection";
 // import HomeSection from ".//(components)/HomeSection";
-import FeaturesSection from ".//(components)/FeaturesSection";
-import TherapySection from ".//(components)/TherapySection";
-import LastSection from ".//(components)/LastSection";
+import FeaturesSection from ".//(components)/Homepage/FeaturesSection";
+import TherapySection from ".//(components)/Homepage/TherapySection";
+import LastSection from ".//(components)/Homepage/LastSection";
 import Footer from ".//(components)/Footer";
-import CookiesSection from ".//(components)/CookiesSection";
+import CookiesSection from ".//(components)/Homepage/CookiesSection";
 import SideNav from ".//(components)/sideNav";
 import Header from "./(components)/Header";
 import MobileNavBar from ".//(components)/mobileNavBar";
@@ -16,14 +16,11 @@ export default function HomePage() {
       {/* <SideNav /> */}
       <CookiesSection />
       <HeroSection />
-      {/* <HomeSection /> */}
       <FeaturesSection />
       <TherapySection />
       <LastSection />
       <Footer />
       <MobileNavBar />
-      {/* <CookiesSection /> */}
-      {/* Add other sections here */}
     </>
   );
 }

@@ -1,13 +1,13 @@
 "use client";
 import React, { useState } from "react";
-import { Tabs, Tab } from "@nextui-org/tabs";
+import Tab from "../../(components)/Tab";
 import SideNav from "../../(components)/sideNav";
 import UpcomingEvents from "../../(components)/Hycares_Hub/UpcomingEvents";
 import FeaturedArticles from "../../(components)/Hycares_Hub/FeaturedArticles";
 import MobileNavBar from "../../(components)/mobileNavBar";
 import Header from "../../(components)/Header";
 
-const HycaresHub = () => {
+const HomePage = () => {
   const [activeTab, setActiveTab] = useState("Upcoming Events");
 
   const events = [
@@ -29,11 +29,31 @@ const HycaresHub = () => {
         <SideNav />
         <MobileNavBar />
         <div className="p-4 flex flex-col justify-center w-full">
-          <h1 className="text-center text-2xl font-bold mb-4">HyCare HUB</h1></div>
-        
+          <h1 className="text-center text-2xl font-bold mb-4">HyCare HUB</h1>
+          <div className="flex items-center justify-center mb-4">
+            <Tab
+              label="Upcoming Events"
+              isActive={activeTab === "Upcoming Events"}
+              onClick={() => setActiveTab("Upcoming Events")}
+            />
+            <Tab
+              label="Featured Articles"
+              isActive={activeTab === "Featured Articles"}
+              onClick={() => setActiveTab("Featured Articles")}
+            />
+          </div>
+          <div className="flex-grow overflow-y-auto">
+            {activeTab === "Upcoming Events" && (
+              <UpcomingEvents events={events} />
+            )}
+            {activeTab === "Featured Articles" && (
+              <FeaturedArticles articles={articles} />
+            )}
+          </div>
+        </div>
       </main>
     </>
   );
 };
 
-export default HycaresHub;
+export default HomePage;

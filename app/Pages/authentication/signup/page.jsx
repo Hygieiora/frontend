@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
+import Footer from "../../../(components)/Footer";
 
 // Functional component for the account creation form
 const AccountForm = () => {
@@ -20,7 +21,7 @@ const AccountForm = () => {
   // Form layout with Tailwind CSS classes
   return (
     <>
-      <div className="max-w-md mx-auto bg-white p-5 rounded-md shadow-sm">
+      <main className="max-w-md mx-auto bg-white p-5 rounded-md shadow-sm">
         <h2 className="text-blue-600 font-bold text-3xl mt-20 leading-normal">
           START YOUR JOURNEY
         </h2>
@@ -153,7 +154,7 @@ const AccountForm = () => {
 
             {/* Continue with Google button */}
             <Link
-              href={"../homepage"}
+              href={"/"}
               className="border px-9 rounded-full py-1 flex align-center justify-center"
             >
               <FcGoogle className="w-[50px] h-[30px]  text-lg font-normal  mr-8" />
@@ -173,7 +174,8 @@ const AccountForm = () => {
             </p>
           </div>
         </form>
-      </div>
+      </main>
+      <Footer />
     </>
   );
 };
