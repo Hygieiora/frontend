@@ -16,7 +16,7 @@ export default function CookiesSection() {
     <div>
       {isOpen && (
         <div
-          className="fixed py-4 my-6 mr-2 bottom-0 w-full z-10"
+          className="fixed -ml-4 py-4 px-2 bottom-0 w-full z-10"
           data-aos="slide-in" // This will animate the div to slide up
         >
           <div className="bg-gray-400 rounded-lg overflow-auto p-8 m-4 w-full">
