@@ -9,18 +9,21 @@ import CookiesSection from ".//(components)/Homepage/CookiesSection";
 import SideNav from ".//(components)/sideNav";
 import Header from "./(components)/Header";
 import MobileNavBar from ".//(components)/mobileNavBar";
+
 export default function HomePage() {
   return (
     <>
-      <Header isFirstPage={true} />
-      {/* <SideNav /> */}
-      <CookiesSection />
-      <HeroSection />
-      <FeaturesSection />
-      <TherapySection />
-      <LastSection />
-      <Footer />
-      <MobileNavBar />
+      <NextUIProvider>
+        <Header isFirstPage={true} />
+        {/* <SideNav /> */}
+        <CookiesSection />
+        <HeroSection />
+        <FeaturesSection />
+        <TherapySection />
+        <LastSection />
+        <Footer />
+        <MobileNavBar />
+      </NextUIProvider>
     </>
   );
 }
