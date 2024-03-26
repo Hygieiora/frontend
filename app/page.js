@@ -9,11 +9,12 @@ import CookiesSection from ".//(components)/Homepage/CookiesSection";
 import SideNav from ".//(components)/sideNav";
 import Header from "./(components)/Header";
 import MobileNavBar from ".//(components)/mobileNavBar";
+// import NextUIProvider from "."
 
 export default function HomePage() {
   return (
     <>
-      <NextUIProvider>
+      {/* <NextUIProvider> */}
         <Header isFirstPage={true} />
         {/* <SideNav /> */}
         <CookiesSection />
@@ -23,7 +24,7 @@ export default function HomePage() {
         <LastSection />
         <Footer />
         <MobileNavBar />
-      </NextUIProvider>
+      {/* </NextUIProvider> */}
     </>
   );
 }

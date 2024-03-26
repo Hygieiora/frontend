@@ -1,143 +1,220 @@
 "use client";
-import React, { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { FcGoogle } from "react-icons/fc";
-import Footer from "../../../(components)/Footer";
-// Functional component for the account creation form
-const LoginForm = () => {
-  // Handle form submission
-  const handleLogin = (event) => {
-    event.preventDefault(); // Prevent default form submission behavior
-    console.log("Logged In"); // Placeholder for form submission logic
-  };
+import { useState } from "react";
+import { Button } from "app/(components)/ui/button";
+import { Input } from "app/(components)/ui/input";
+import { Label } from "app/(components)/ui/label";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "app/(components)/ui/card";
 
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "app/(components)/ui/tabs";
+export default function Dashboard() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState("");
+  const [userType, setUserType] = useState("Doctor");
 
-  // Form layout with Tailwind CSS classes
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const validateEmail = () => {
+    const re =
+      userType === "Doctor"
+        ? /^[a-z0-9]+@knust\.edu\.gh$/
+        : /^[a-z0-9]+@st\.knust\.edu\.gh$/;
+    return re.test(email);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!validateEmail()) {
+      alert("Invalid email format for " + userType);
+      return;
+    }
+    // Continue with form submission
+  };
+
   return (
-    <>
-      <main className="max-w-md mx-auto bg-white p-5 rounded-md shadow-sm">
-        <h2 className="text-blue-600 font-bold text-3xl mt-20 leading-normal">
-          WELCOME BACK
-        </h2>
-        <h2 className="text-2xl font-bold text-gray-900">Sign In</h2>
-        <form onSubmit={handleLogin} className="mt-4">
-          {/* Input fields with appropriate types and Tailwind CSS styling */}
-
-          {/* Email address */}
-          <div className="relative mb-4">
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className={`w-full p-3 border border-gray-300 rounded-md transition-all duration-200 ease-in-out peer-focus:h-1/2 peer-focus:-translate-y-full peer-focus:pl-0 peer-focus:text-xs peer-focus:text-gray-700 peer-valid:h-1/2 peer-valid:-translate-y-full peer-valid:pl-0 peer-valid:text-xs peer-valid:text-gray-700" ${
-                email ? "pt-7" : ""
-              }`}
-            />
-            <label
-              htmlFor="email"
-              className={`absolute left-3 top-3 transition-all duration-200 ease-in-out peer-focus:h-1/2 peer-focus:-translate-y-full peer-focus:pl-0 peer-focus:text-xs peer-focus:text-gray-700 peer-valid:h-1/2 peer-valid:-translate-y-full peer-valid:pl-0 peer-valid:text-xs peer-valid:text-gray-700" ${
-                email ? "text-xs top-2" : "text-sm top-3.5 "
-              }`}
-            >
-              Email address
-            </label>
-          </div>
-          {/* Password */}
-          <div className="relative mb-4">
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              className={`w-full p-3 border border-gray-300 rounded-md transition-all duration-200 ease-in-out peer-focus:h-1/2 peer-focus:-translate-y-full peer-focus:pl-0 peer-focus:text-xs peer-focus:text-gray-700 peer-valid:h-1/2 peer-valid:-translate-y-full peer-valid:pl-0 peer-valid:text-xs peer-valid:text-gray-700" ${
-                password ? "pt-7" : ""
-              }`}
-            />
-            <label
-              htmlFor="password"
-              className={`absolute left-3 top-3 transition-all duration-200 ease-in-out peer-focus:h-1/2 peer-focus:-translate-y-full peer-focus:pl-0 peer-focus:text-xs peer-focus:text-gray-700 peer-valid:h-1/2 peer-valid:-translate-y-full peer-valid:pl-0 peer-valid:text-xs peer-valid:text-gray-700" ${
-                password ? "text-xs top-2" : "text-sm top-3.5"
-              }`}
-            >
-              Password
-            </label>
-          </div>
-
-          {/* Remember me and Forgot Password */}
-          <div className="flex justify-between items-center text-sm">
-            <label className="flex items-center ml-8">
-              <input
-                type="checkbox"
-                checked={rememberMe}
-                onChange={(e) => setRememberMe(e.target.checked)}
-                className="mr-2"
-              />
-              Remember me
-            </label>
-            <a
-              href="/forgot-password"
-              className="text-blue-500 hover:underline mr-8"
-            >
-              Forgot Password?
-            </a>
-          </div>
-
-          {/* Create account and Sign in buttons */}
-          <div className="relative mb-4 py-3 flex justify-between items-center">
-            <Link href={"/Pages/authentication/signup"}>
-              <button
-                type="submit"
-                className="w-[180px] h-[60px] bg-blue-500 rounded-full text-lg font-normal text-black-400 mr-8"
-              >
-                Create account
-              </button>
-            </Link>
-            <Link href={"/"}>
-              <button
-                type="submit"
-                className="w-[180px] h-[60px] bg-blue-100 rounded-full text-lg font-normal text-black-400 mr-8"
-              >
-                Sign in
-              </button>
-            </Link>
-          </div>
-
-          {/* Note about completing profile */}
-          <p className="text-xs text-center text-gray-500">
-            *make sure you have completed your profile to access all features
-          </p>
-
-          <div className="flex flex-col items-center space-y-3 p-3">
-            {/* Continue with Google button */}
-            <div className="flex align-center justify-center my-5">
-              <span className=" inline-block w-20 h-1 bg-gray-300 mr-4 mt-3"></span>
-              <span className="text-gray-300">OR</span>
-              <span className=" inline-block w-20 h-1 bg-gray-300 ml-4 mt-3"></span>
-            </div>
-            <div className="flex align-center justify-center w-full h-[60px]">
-              <Link
-                href={"../homepage"}
-                className="border px-9 rounded-full py-1 flex items-center w-full"
-              >
-                <FcGoogle className=" w-[50px] h-[30px]  text-lg font-normal  mr-8" />
-                <p className="text-lg font-normal text-black-400 mr-8 flex items-center">
-                  {" "}
-                  Continue with Google
-                </p>
-              </Link>
-            </div>
-          </div>
-        </form>
-      </main>
-      <Footer />
-    </>
+    <div className="container p-8 m-8 flex items-center justify-center ">
+      <Tabs defaultValue="Doctor" className="w-[400px]">
+        <TabsList className="grid w-full grid-cols-2">
+          <TabsTrigger value="Doctor" onClick={() => setUserType("Doctor")}>
+            Doctor
+          </TabsTrigger>
+          <TabsTrigger value="Student" onClick={() => setUserType("Student")}>
+            Student
+          </TabsTrigger>
+        </TabsList>
+        <TabsContent value="Doctor">
+          <Card>
+            <CardContent className="space-y-2">
+              <form action="" onSubmit={handleSubmit}>
+                <div className="w-full lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-[800px]">
+                  <div className="flex items-center justify-center py-12">
+                    <div className="mx-auto grid w-[350px] gap-6">
+                      <div className="grid gap-2 text-center">
+                        <h2 className="text-blue-600 font-bold text-3xl mt-10 leading-normal">
+                          WELCOME BACK
+                        </h2>
+                        <h1 className="text-3xl font-bold">Login</h1>
+                        <p className="text-balance text-muted-foreground">
+                          Enter your email below to login to your account
+                        </p>
+                      </div>
+                      <div className="grid gap-4">
+                        <div className="grid gap-2">
+                          <Label htmlFor="email">Email</Label>
+                          <Input
+                            id="email"
+                            type="email"
+                            placeholder="username@knust.edu.gh"
+                            required
+                            value={email}
+                            onChange={handleEmailChange}
+                          />
+                        </div>
+                        <div className="grid gap-2">
+                          <div className="flex items-center">
+                            <Label htmlFor="password">Password</Label>
+                            <Link
+                              href="/forgot-password"
+                              className="ml-auto inline-block text-sm underline"
+                            >
+                              Forgot your password?
+                            </Link>
+                          </div>
+                          <Input
+                            id="password"
+                            type="password"
+                            required
+                            value={password}
+                            onChange={handlePasswordChange}
+                          />
+                        </div>
+                        <Button type="submit" className="w-full">
+                          Login
+                        </Button>
+                        {/* <Button variant="outline" className="w-full">
+                        Login with Google
+                      </Button> */}
+                      </div>
+                      <div className="mt-4 text-center text-sm">
+                        Don&apos;t have an account?{" "}
+                        <Link
+                          href="/Pages/authentication/signup"
+                          className="underline"
+                        >
+                          Sign up
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="hidden bg-muted lg:block">
+                    <Image
+                      src="/splash.png"
+                      alt="Image"
+                      width="1920"
+                      height="1080"
+                      className="h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
+                    />
+                  </div>
+                </div>
+              </form>
+            </CardContent>
+          </Card>
+        </TabsContent>
+        <TabsContent value="Student">
+          <Card>
+            <CardContent className="space-y-2">
+              <form action="" onSubmit={handleSubmit}>
+                <div className="w-full lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-[800px]">
+                  <div className="flex items-center justify-center py-12">
+                    <div className="mx-auto grid w-[350px] gap-6">
+                      <div className="grid gap-2 text-center">
+                        <h2 className="text-blue-600 font-bold text-3xl mt-10 leading-normal">
+                          WELCOME BACK
+                        </h2>
+                        <h1 className="text-3xl font-bold">Login</h1>
+                        <p className="text-balance text-muted-foreground">
+                          Enter your email below to login to your account
+                        </p>
+                      </div>
+                      <div className="grid gap-4">
+                        <div className="grid gap-2">
+                          <Label htmlFor="email">Email</Label>
+                          <Input
+                            id="email"
+                            type="email"
+                            placeholder="m@knust.edu.gh"
+                            required
+                            value={email}
+                            onChange={handleEmailChange}
+                          />
+                        </div>
+                        <div className="grid gap-2">
+                          <div className="flex items-center">
+                            <Label htmlFor="password">Password</Label>
+                            <Link
+                              href="/forgot-password"
+                              className="ml-auto inline-block text-sm underline"
+                            >
+                              Forgot your password?
+                            </Link>
+                          </div>
+                          <Input
+                            id="password"
+                            type="password"
+                            required
+                            value={password}
+                            onChange={handlePasswordChange}
+                          />
+                        </div>
+                        <Button type="submit" className="w-full">
+                          Login
+                        </Button>
+                        {/* <Button variant="outline" className="w-full">
+                        Login with Google
+                      </Button> */}
+                      </div>
+                      <div className="mt-4 text-center text-sm">
+                        Don&apos;t have an account?{" "}
+                        <Link href="#" className="underline">
+                          Sign up
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="hidden bg-muted lg:block">
+                    <Image
+                      src="/splash.png"
+                      alt="Image"
+                      width="1920"
+                      height="1080"
+                      className="h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
+                    />
+                  </div>
+                </div>
+              </form>
+            </CardContent>
+          </Card>
+        </TabsContent>
+      </Tabs>
+    </div>
   );
-};
-
-export default LoginForm;
+}
