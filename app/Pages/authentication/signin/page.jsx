@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "app/(components)/ui/button";
@@ -8,10 +8,10 @@ import { Label } from "app/(components)/ui/label";
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
+  // CardDescription,
+  // CardFooter,
+  // CardHeader,
+  // CardTitle,
 } from "app/(components)/ui/card";
 
 import {
@@ -78,7 +78,8 @@ export default function Dashboard() {
                         </p>
                       </div>
                       <div className="grid gap-4">
-                        <div className="grid gap-2">
+
+                        <div className="">
                           <Label htmlFor="email">Email</Label>
                           <Input
                             id="email"
@@ -89,6 +90,8 @@ export default function Dashboard() {
                             onChange={handleEmailChange}
                           />
                         </div>
+
+
                         <div className="grid gap-2">
                           <div className="flex items-center">
                             <Label htmlFor="password">Password</Label>
@@ -125,15 +128,15 @@ export default function Dashboard() {
                       </div>
                     </div>
                   </div>
-                  <div className="hidden bg-muted lg:block">
-                    <Image
-                      src="/splash.png"
+                  {/* <div className="hidden bg-muted lg:block">
+                     <Image
+                      src="/.png"
                       alt="Image"
                       width="1920"
                       height="1080"
                       className="h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
-                    />
-                  </div>
+                    /> 
+                  </div> */}
                 </div>
               </form>
             </CardContent>
@@ -200,15 +203,15 @@ export default function Dashboard() {
                       </div>
                     </div>
                   </div>
-                  <div className="hidden bg-muted lg:block">
-                    <Image
+                  {/* <div className="hidden bg-muted lg:block">
+                     <Image
                       src="/splash.png"
                       alt="Image"
                       width="1920"
                       height="1080"
                       className="h-full w-full object-cover dark:brightness-[0.2] dark:grayscale"
-                    />
-                  </div>
+                    /> 
+                  </div> */}
                 </div>
               </form>
             </CardContent>
