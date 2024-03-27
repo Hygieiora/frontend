@@ -12,7 +12,7 @@ import {
 
 const items = [
   {
-    imgPath: "/02.jpg",
+    imgPath: "/01.jpg",
     title: "Ready To Get Started?",
     description: "Choose your path to a sound and healthy life",
   },
@@ -31,13 +31,13 @@ const items = [
 export default function CarouselDemo() {
   return (
     <div className="flex justify-center">
-      <Carousel className="mx-12 px-12 w-full">
+      <Carousel className=" w-full">
         <CarouselContent>
           {items.map((item, index) => (
             <CarouselItem key={index}>
-              <div className="p-1">
+              <div className="">
                 <div
-                  className="pt-18 relative"
+                  className=" relative"
                   style={{
                     backgroundImage: `url(${item.imgPath})`,
                     backgroundSize: "cover",

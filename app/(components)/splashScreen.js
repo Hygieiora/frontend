@@ -55,20 +55,22 @@ const SplashScreen = ({ finishLoading }) => {
 
   return (
     <div
-      className="flex h-screen items-center bg-blue-600 justify-center"
+      className="flex flex-col h-screen items-center text-center bg-blue-600 justify-center "
       isMounted={isMounted}
     >
       <Image
         id="logo"
         src="/assets/splash.png"
-        alt=""
-        width={200}
-        height={200}
-        
+        alt="splash-logo"
+        width={100}
+        height={100}
       />
-        <p className="mt-4 text-lg font-semibold text-white">
-        Your call your Health
-      </p>
+      <span className="text-3xl text-center font-bold text-white ">
+        H Y G I E I O R A
+      </span>
+      <span className="text-xl text-center text-white">
+        Your Health, Your Call
+      </span>
     </div>
   );
 };
