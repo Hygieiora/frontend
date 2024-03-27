@@ -1,5 +1,5 @@
 "use client";
-// import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "app/(components)/ui/button";
@@ -51,7 +51,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="container p-8 m-8 flex items-center justify-center ">
+    <div className="container p-8 m-8 flex items-center justify-center">
       <Tabs defaultValue="Doctor" className="w-[400px]">
         <TabsList className="grid w-full grid-cols-2">
           <TabsTrigger value="Doctor" onClick={() => setUserType("Doctor")}>
@@ -64,12 +64,18 @@ export default function Dashboard() {
         <TabsContent value="Doctor">
           <Card>
             <CardContent className="space-y-2">
-              <form action="" onSubmit={handleSubmit}>
-                <div className="w-full lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-[800px]">
-                  <div className="flex items-center justify-center py-12">
+              <form action="" onSubmit={handleSubmit} className="w-full">
+                <div className="w-full ">
+                  <Image
+                    className="mx-auto "
+                    src={"/logo.png"}
+                    width={80}
+                    height={80}
+                  ></Image>
+                  <div className="flex items-center justify-center p-auto">
                     <div className="mx-auto grid w-[350px] gap-6">
                       <div className="grid gap-2 text-center">
-                        <h2 className="text-blue-600 font-bold text-3xl mt-10 leading-normal">
+                        <h2 className="text-blue-600 font-bold text-3xl mt-auto leading-normal">
                           WELCOME BACK
                         </h2>
                         <h1 className="text-3xl font-bold">Login</h1>
@@ -94,7 +100,7 @@ export default function Dashboard() {
                           <div className="flex items-center">
                             <Label htmlFor="password">Password</Label>
                             <Link
-                              href="/forgot-password"
+                              href="/Pages/authentication/forgot-password"
                               className="ml-auto inline-block text-sm underline"
                             >
                               Forgot your password?
@@ -144,11 +150,17 @@ export default function Dashboard() {
           <Card>
             <CardContent className="space-y-2">
               <form action="" onSubmit={handleSubmit}>
-                <div className="w-full lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-[800px]">
-                  <div className="flex items-center justify-center py-12">
+                <div className="w-full ">
+                  <Image
+                    className="mx-auto "
+                    src={"/logo.png"}
+                    width={80}
+                    height={80}
+                  ></Image>
+                  <div className="flex items-center justify-center p-auto">
                     <div className="mx-auto grid w-[350px] gap-6">
                       <div className="grid gap-2 text-center">
-                        <h2 className="text-blue-600 font-bold text-3xl mt-10 leading-normal">
+                        <h2 className="text-blue-600 font-bold text-3xl mt-auto leading-normal">
                           WELCOME BACK
                         </h2>
                         <h1 className="text-3xl font-bold">Login</h1>

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -29,12 +30,25 @@ const items = [
 ];
 
 export default function CarouselDemo() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % items.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []); // Run once on component mount
+
   return (
     <div className="flex justify-center">
       <Carousel className=" w-full">
         <CarouselContent>
           {items.map((item, index) => (
-            <CarouselItem key={index}>
+            <CarouselItem
+              key={index}
+              className={index === activeIndex ? "active" : ""}
+            >
               <div className="">
                 <div
                   className=" relative"
@@ -42,7 +56,7 @@ export default function CarouselDemo() {
                     backgroundImage: `url(${item.imgPath})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
-                    width: "100%",
+                    width: "auto",
                     height: "100vh",
                   }}
                 >
@@ -63,8 +77,6 @@ export default function CarouselDemo() {
                     </div>
                   </div>
                 </div>
-                {/* <span className="text-4xl font-semibold">{item.title}</span>
-                <p>{item.description}</p> */}
               </div>
             </CarouselItem>
           ))}
