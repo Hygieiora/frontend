@@ -64,7 +64,11 @@ const SplashScreen = ({ finishLoading }) => {
         alt=""
         width={200}
         height={200}
+        
       />
+        <p className="mt-4 text-lg font-semibold text-white">
+        Your call your Health
+      </p>
     </div>
   );
 };
