@@ -58,10 +58,10 @@ const SignupForm = () => {
                       width={80}
                       height={80}
                     ></Image>
-                    <h2 className="text-blue-600 font-bold text-3xl  leading-normal">
+                    <h2 className="text-blue-600 font-bold text-3xl  leading-normal text-center">
                       START YOUR JOURNEY
                     </h2>
-                    <h2 className="text-2xl font-bold text-gray-900">
+                    <h2 className="text-2xl font-bold text-gray-900 text-center">
                       Create new account
                     </h2>
                     <div className="grid gap-4">
@@ -141,10 +141,10 @@ const SignupForm = () => {
                       width={80}
                       height={80}
                     ></Image>
-                    <h2 className="text-blue-600 font-bold text-3xl  leading-normal">
+                    <h2 className="text-blue-600 font-bold text-3xl  leading-normal text-center">
                       START YOUR JOURNEY
                     </h2>
-                    <h2 className="text-2xl font-bold text-gray-900">
+                    <h2 className="text-2xl font-bold text-gray-900 text-center">
                       Create new account
                     </h2>
                     <div className="grid gap-4">
@@ -175,7 +175,7 @@ const SignupForm = () => {
                         <Input
                           id="email"
                           type="email"
-                          placeholder="username@knust.edu.gh"
+                          placeholder="username@st.knust.edu.gh"
                           required
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
