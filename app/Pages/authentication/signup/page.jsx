@@ -6,6 +6,7 @@ import Footer from "../../../(components)/Footer";
 import { Button } from "../../../(components)/ui/button";
 import { Input } from "../../../(components)/ui/input";
 import { Label } from "../../../(components)/ui/label";
+import Image from "next/image";
 import {
   Card,
   CardContent,
@@ -49,16 +50,22 @@ const SignupForm = () => {
           <TabsContent value="Doctor">
             <Card>
               <CardContent>
-                <form onSubmit={handleSubmit} className="mt-4">
+                <form onSubmit={handleSubmit} className="">
                   <main className="max-w-md mx-auto bg-white p-5 rounded-md shadow-sm">
-                    <h2 className="text-blue-600 font-bold text-3xl mt-20 leading-normal">
+                    <Image
+                      className="mx-auto "
+                      src={"/logo.png"}
+                      width={80}
+                      height={80}
+                    ></Image>
+                    <h2 className="text-blue-600 font-bold text-3xl  leading-normal">
                       START YOUR JOURNEY
                     </h2>
                     <h2 className="text-2xl font-bold text-gray-900">
                       Create new account
                     </h2>
                     <div className="grid gap-4">
-                      <div className="grid grid-cols-2 gap-4">
+                      <div className="grid grid-cols-2 gap-4 pt-3 ">
                         <div className="grid gap-2">
                           <Label htmlFor="first-name">First name</Label>
                           <Input
@@ -93,7 +100,13 @@ const SignupForm = () => {
                       </div>
                       <div className="grid gap-2">
                         <Label htmlFor="password">Password</Label>
-                        <Input id="password" type="password" />
+                        <Input
+                          id="password"
+                          type="password"
+                          required
+                          value={password}
+                          onChange={(e) => setPassword(e.target.value)}
+                        />
                       </div>
                       <Button type="submit" className="w-full bg-blue-600">
                         Create an account
@@ -104,7 +117,10 @@ const SignupForm = () => {
                     </div>
                     <div className="mt-4 text-center text-sm">
                       Already have an account?{" "}
-                      <Link href="#" className="underline">
+                      <Link
+                        href="/Pages/authentication/signin"
+                        className="underline"
+                      >
                         Sign in
                       </Link>
                     </div>
@@ -117,22 +133,30 @@ const SignupForm = () => {
           <TabsContent value="Student">
             <Card>
               <CardContent>
-                <form onSubmit={handleSubmit} className="mt-4">
+                <form onSubmit={handleSubmit} className="">
                   <main className="max-w-md mx-auto bg-white p-5 rounded-md shadow-sm">
-                    <h2 className="text-blue-600 font-bold text-3xl mt-20 leading-normal">
+                    <Image
+                      className="mx-auto "
+                      src={"/logo.png"}
+                      width={80}
+                      height={80}
+                    ></Image>
+                    <h2 className="text-blue-600 font-bold text-3xl  leading-normal">
                       START YOUR JOURNEY
                     </h2>
                     <h2 className="text-2xl font-bold text-gray-900">
                       Create new account
                     </h2>
                     <div className="grid gap-4">
-                      <div className="grid grid-cols-2 gap-4">
+                      <div className="grid grid-cols-2 gap-4 pt-3 ">
                         <div className="grid gap-2">
                           <Label htmlFor="first-name">First name</Label>
                           <Input
                             id="first-name"
                             placeholder="First Name"
                             required
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
                           />
                         </div>
                         <div className="grid gap-2">
@@ -141,6 +165,8 @@ const SignupForm = () => {
                             id="last-name"
                             placeholder="Last Name"
                             required
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
                           />
                         </div>
                       </div>
@@ -149,7 +175,7 @@ const SignupForm = () => {
                         <Input
                           id="email"
                           type="email"
-                          placeholder="username@st.knust.edu.gh"
+                          placeholder="username@knust.edu.gh"
                           required
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
@@ -165,17 +191,19 @@ const SignupForm = () => {
                           onChange={(e) => setPassword(e.target.value)}
                         />
                       </div>
-                      <Button
-                        variant="outline"
-                        type="submit"
-                        className="w-full bg-blue-600"
-                      >
+                      <Button type="submit" className="w-full bg-blue-600">
                         Create an account
                       </Button>
+                      {/* <Button variant="outline" className="w-full">
+                        Sign up with GitHub
+                      </Button> */}
                     </div>
                     <div className="mt-4 text-center text-sm">
                       Already have an account?{" "}
-                      <Link href="#" className="underline">
+                      <Link
+                        href="/Pages/authentication/signin"
+                        className="underline"
+                      >
                         Sign in
                       </Link>
                     </div>
