@@ -1,6 +1,9 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+// import  avatar icon from react icons
+
+
 
 const Header = ({ isFirstPage }) => {
   return (
@@ -9,7 +12,7 @@ const Header = ({ isFirstPage }) => {
         <Link href={"/"} className="flex">
           <Image
             width={50}
-            height={130}
+            height={100}
             src="/assets/splash.png" // Path to your logo image
             alt="Logo"
             className="mr-4"
