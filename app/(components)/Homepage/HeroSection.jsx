@@ -13,14 +13,14 @@ import {
 
 const items = [
   {
-    imgPath: "/02.jpg",
-    title: "Ready To Get Started?",
-    description: "Choose your path to a sound and healthy life",
+    imgPath: "/01.jpg",
+    title: "Your Mental Well Being Matters",
+    description: "Welcome to a space of support and healing",
   },
   {
     imgPath: "/03.jpg",
-    title: "Ready To Get Started?",
-    description: "Choose your path to a sound and healthy life",
+    title: "Connecting For Change",
+    description: "Avoid the stigma and connect from anywhere in the world",
   },
   {
     imgPath: "/04.jpg",
@@ -45,7 +45,10 @@ export default function CarouselDemo() {
       <Carousel className=" w-full">
         <CarouselContent>
           {items.map((item, index) => (
-            <CarouselItem key={index} className={index === activeIndex ? 'active':''}>
+            <CarouselItem
+              key={index}
+              className={index === activeIndex ? "active" : ""}
+            >
               <div className="">
                 <div
                   className=" relative"

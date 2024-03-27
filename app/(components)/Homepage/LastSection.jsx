@@ -1,7 +1,7 @@
 // Import necessary dependencies
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa"; // Import the icons you need
-
+import Link from "next/link";
 export default function LastSection() {
   return (
     <>
@@ -33,9 +33,11 @@ export default function LastSection() {
             </p>
           </div>
         </section>
-        <button className="p-3 font-semi-bold text-blue-600 border border-blue-600 rounded-full px-10 font-semibold mt-10">
-          Start Now
-        </button>
+        <Link href={"/Pages/question_to_call"}>
+          <button className="p-3 font-semi-bold text-blue-600 border border-blue-600 rounded-full px-10 font-semibold mt-10">
+            Start Now
+          </button>
+        </Link>
       </section>
     </>
   );
