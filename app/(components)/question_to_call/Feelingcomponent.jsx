@@ -22,15 +22,11 @@ const emotions = [
 const FeelingComponent = ({ nextStep }) => {
   // Define state variables
   const [selectedEmotion, setSelectedEmotion] = useState("");
-  const [otherEmotion, setOtherEmotion] = useState("");
+  // const [otherEmotion, setOtherEmotion] = useState("");
 
   // Define event handlers
   const handleEmotionChange = (event) => {
     setSelectedEmotion(event.target.value);
-  };
-
-  const handleOtherEmotionChange = (event) => {
-    setOtherEmotion(event.target.value);
   };
 
   const handleFormSubmit = (event) => {
@@ -62,17 +58,27 @@ const FeelingComponent = ({ nextStep }) => {
                 <label htmlFor={emotion}>{emotion}</label>
               </div>
             ))}
-            <label htmlFor="other">Other? Please write in the box below</label>
-            <input
-              type="text"
-              id="other"
-              name="other"
-              value={otherEmotion}
-              onChange={handleOtherEmotionChange}
-            />
+            <div className="flex flex-col">
+              <div className="flex">
+                {" "}
+                <input type="checkbox" htmlFor="other" />
+                <label className="ml-3">
+                  Other? Please write in the box below
+                </label>
+              </div>
+
+              <input
+                type="textarea"
+                id="other"
+                name="other"
+                className="border-2 rounded-md border-blue-600"
+                // value={otherEmotion}
+                // onChange={handleOtherEmotionChange}
+              />
+            </div>
             {/* <button type="submit">Submit</button> */}
             <button
-              className="bg-blue-600 rounded-md text-white hover:bg-white hover:text-blue-600 hover:border-blue-600 border-2  px-4 py-2 mr-2"
+              className="bg-blue-600 mt-5 rounded-md text-white hover:bg-white hover:text-blue-600 hover:border-blue-600 border-2  px-4 py-2 mr-2"
               onClick={nextStep}
             >
               Next

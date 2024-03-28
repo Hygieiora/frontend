@@ -55,15 +55,16 @@ const SplashScreen = ({ finishLoading }) => {
 
   return (
     <div
-      className="flex flex-col h-screen items-center text-center bg-blue-600 justify-center "
+      className="flex flex-col h-screen items-center text-center bg-blue-600 justify-center"
       isMounted={isMounted}
     >
       <Image
         id="logo"
+        className="-m-4 -p-4"
         src="/assets/splash.png"
         alt="splash-logo"
         width={100}
-        height={100}
+        height={150}
       />
       <span className="text-3xl text-center font-bold text-white ">
         H Y G I E I O R A
@@ -74,5 +75,4 @@ const SplashScreen = ({ finishLoading }) => {
     </div>
   );
 };
-
 export default SplashScreen;

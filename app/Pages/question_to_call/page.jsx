@@ -14,16 +14,19 @@ export default function Home() {
   const nextStep = () => {
     setStep(step + 1);
   };
+  const prevStep = () => {
+    setStep(step - 1);
+  };
 
   switch (step) {
     case 1:
       return <FeelingComponent nextStep={nextStep} />;
     case 2:
-      return <GoalsComponent nextStep={nextStep} />;
+      return <GoalsComponent nextStep={nextStep} prevStep={prevStep} />;
     case 3:
-      return <MedicationComponent />;
+      return <MedicationComponent prevStep={prevStep} />;
     default:
-      return ;
+      return;
   }
 }
 

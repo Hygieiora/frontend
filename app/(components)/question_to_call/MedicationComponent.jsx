@@ -8,7 +8,7 @@ import SideNav from "../../(components)/sideNav";
 const emotions = ["Yes", "No", ,];
 
 // Define the main component
-const MedicationComponent = () => {
+const MedicationComponent = ({ prevStep }) => {
   // Define state variables
   const [selectedEmotion, setSelectedEmotion] = useState("");
   const [otherEmotion, setOtherEmotion] = useState("");
@@ -37,7 +37,7 @@ const MedicationComponent = () => {
           <h1 className="text-center text-semibold text-2xl">
             Are you on medication?{" "}
           </h1>
-          <form onSubmit={handleFormSubmit}>
+          <form onSubmit={handleFormSubmit} className="flex flex-col">
             {emotions.map((emotion) => (
               <div className="" key={emotion}>
                 <input
@@ -51,13 +51,26 @@ const MedicationComponent = () => {
                 <label htmlFor={emotion}>{emotion}</label>
               </div>
             ))}
-            <input type="text" id="other" name="other" />
-            <button
-              className="bg-blue-600 rounded-md text-white hover:bg-white hover:text-blue-600 hover:border-blue-600 border-2  px-4 py-2 mr-2"
-              //   onClick={nextStep}
-            >
-              Submit
-            </button>
+            <input
+              className="border rounded-md border-blue-600"
+              type="text"
+              id="other"
+              name="other"
+            />
+            <div>
+              <button
+                className="bg-blue-600 mt-5 rounded-md text-white hover:bg-white hover:text-blue-600 hover:border-blue-600 border-2  px-4 py-2 mr-2"
+                onClick={prevStep}
+              >
+                Prev
+              </button>
+              <button
+                className="bg-blue-600 rounded-md text-white hover:bg-white hover:text-blue-600 hover:border-blue-600 border-2  px-4 py-2 mr-2"
+                //   onClick={nextStep}
+              >
+                Submit
+              </button>
+            </div>
           </form>
         </section>
       </main>

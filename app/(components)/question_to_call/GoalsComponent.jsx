@@ -9,12 +9,12 @@ const emotions = [
   "Increase my knowledge of mental health",
   "Improve my mental health",
   "Understand myself better",
-  "Dealwith my psyhchological issue",
+  "Deal with my psyhchological issue",
   "I don't have any",
 ];
 
 // Define the main component
-const GoalsComponent = ({ nextStep }) => {
+const GoalsComponent = ({ nextStep, prevStep }) => {
   // Define state variables
   const [selectedEmotion, setSelectedEmotion] = useState("");
   const [otherEmotion, setOtherEmotion] = useState("");
@@ -50,24 +50,22 @@ const GoalsComponent = ({ nextStep }) => {
                   type="checkbox"
                   id={emotion}
                   name="emotion"
-                  className="bg-blue mr-3"
+                  className="bg-blue mt-2 mr-3"
                   value={emotion}
                   onChange={handleEmotionChange}
                 />
                 <label htmlFor={emotion}>{emotion}</label>
               </div>
             ))}
-            <label htmlFor="other">Other? Please write in the box below</label>
-            <input
-              type="text"
-              id="other"
-              name="other"
-              value={otherEmotion}
-              onChange={handleOtherEmotionChange}
-            />
-            {/* <button type="submit">Submit</button> */}
+
             <button
-              className="bg-blue-600 rounded-md text-white hover:bg-white hover:text-blue-600 hover:border-blue-600 border-2  px-4 py-2 mr-2"
+              className="bg-blue-600 mt-5 rounded-md text-white hover:bg-white hover:text-blue-600 hover:border-blue-600 border-2  px-4 py-2 mr-2"
+              onClick={prevStep}
+            >
+              Prev
+            </button>
+            <button
+              className="bg-blue-600 mt-5 rounded-md text-white hover:bg-white hover:text-blue-600 hover:border-blue-600 border-2  px-4 py-2 mr-2"
               onClick={nextStep}
             >
               Next
